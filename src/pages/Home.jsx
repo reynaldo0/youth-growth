@@ -28,7 +28,7 @@ const Home = () => {
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white/100 via-white/40 to-transparent"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <div className="relative z-10 flex flex-col items-center pt-12 justify-center h-full text-center text-white px-4">
         <h1 className="text-4xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide">
           YOUTH GROWTH
         </h1>
@@ -45,7 +45,7 @@ const Home = () => {
         </p>
         <div className="border-2 h-48 w-96 mb-10"></div>
         <a href="#map">
-          <button className="bg-transparent border-2 border-white text-white px-10 py-3 rounded-full font-semibold hover:bg-[#FF8C00]/70">
+          <button className="bg-transparent border-2 border-black text-black px-10 py-3 rounded-full font-semibold hover:bg-black hover:text-white">
             Jelajahi
           </button>
         </a>
