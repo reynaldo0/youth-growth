@@ -17,13 +17,13 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="fixed left-0 top-0 z-[99999] md:px-10 w-full border-gray-200 bg-[#1E3A5F]/90 backdrop-blur-md">
+      <nav className="fixed left-0 top-0 z-[99999] md:px-10 w-full border-gray-400 bg-red-800 backdrop-blur-md">
         <div className="container mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4">
           <a
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <p className="text-2xl text-[#FFA500] font-bold">Youth <span className="text-white">Growth</span></p>
+            <p className="text-2xl text-white font-bold">Youth <span className="text-white">Growth</span></p>
           </a>
           <button
             ref={collapseBtnRef}
