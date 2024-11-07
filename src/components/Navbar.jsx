@@ -17,13 +17,13 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="fixed left-0 top-0 z-[99999] md:px-10 w-full border-gray-400 bg-red-800 backdrop-blur-md">
+      <nav className="fixed left-0 top-0 z-[99999] md:px-10 w-full border-gray-400 bg-white backdrop-blur-md">
         <div className="container mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4">
           <a
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <p className="text-2xl text-white font-bold">Youth <span className="text-white">Growth</span></p>
+            <p className="text-2xl text-[#F92020] font-bold">Youth <span className="text-black">Growth</span></p>
           </a>
           <button
             ref={collapseBtnRef}
@@ -55,7 +55,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className="relative block rounded px-3 py-2 md:text-white before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
+                  className="relative block rounded px-3 py-2 md:text-black before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
                 >
                   Beranda
                 </a>
@@ -63,7 +63,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#informasi"
-                  className="relative block rounded px-3 py-2 md:text-white before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
+                  className="relative block rounded px-3 py-2 md:text-black before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
                 >
                   Program
                 </a>
@@ -71,7 +71,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#forum"
-                  className="relative block rounded px-3 py-2 md:text-white before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
+                  className="relative block rounded px-3 py-2 md:text-black before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
                 >
                   Bidang
                 </a>
@@ -79,7 +79,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#panduan"
-                  className="relative block rounded px-3 py-2 md:text-white before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
+                  className="relative block rounded px-3 py-2 md:text-black before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#FFA500]"
                 >
                   Testimoni
                 </a>

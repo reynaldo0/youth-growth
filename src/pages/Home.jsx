@@ -62,7 +62,7 @@ const Home = ({ height = '80vh' }) => {
   };
 
   return (
-    <div className="mx-12 pt-16">
+    <div className="md:mx-12 md:pt-16 sm:min-h-screen">
       <div className="relative overflow-hidden rounded-b-3xl" style={{ height: height }}>
         {/* Background Images with Sliding Animation */}
         <div
@@ -95,7 +95,7 @@ const Home = ({ height = '80vh' }) => {
         {/* Content aligned to the left */}
         <div className="relative z-10 flex flex-col items-start pt-12 justify-center h-full text-left text-white px-4 ml-12" style={{ height: '100%' }}>
           <h1 className="text-4xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide">
-            <span className="text-[#F92020]">YOUTH </span>
+            <span className="text-[#F92020]">Youth </span>
             {/* Slide text animation */}
             <span
               className={`transition-all duration-700 ease-in-out transform ${textAnimating
@@ -118,7 +118,7 @@ const Home = ({ height = '80vh' }) => {
             Platform Pengembangan Diri dan Kesempatan Emas Bagi Generasi Muda
           </p>
           <a href="#map">
-            <button className="bg-transparent border-2 border-white bg-[#F92020] text-white text-2xl px-16 py-3 rounded-full font-semibold hover:bg-black hover:text-white">
+            <button className="bg-transparent border-2 border-white bg-[#F92020] text-white text-2xl px-12 py-2 rounded-full font-semibold hover:bg-black hover:text-white">
               Jelajahi
             </button>
           </a>
@@ -126,15 +126,15 @@ const Home = ({ height = '80vh' }) => {
 
         {/* Pagination Buttons */}
       </div>
-      <div className="absolute pt-5 left-1/2 z-50 transform -translate-x-1/2 flex space-x-4 scale-125">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePaginationClick(index)}
-            className={`w-3 h-3 rounded-full ${bgImageIndex === index ? 'bg-black' : 'bg-transparent border-2 border-black opacity-50 hover:opacity-75'}`}
-          />
-        ))}
-      </div>
+        <div className="absolute pt-5 left-1/2 z-50 transform -translate-x-1/2 flex space-x-4 scale-125">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePaginationClick(index)}
+              className={`w-3 h-3 rounded-full ${bgImageIndex === index ? 'bg-black' : 'bg-transparent border-2 border-black opacity-50 hover:opacity-75'}`}
+            />
+          ))}
+        </div>
     </div>
   );
 };
