@@ -26,12 +26,12 @@ const VisionSection = () => {
     <div className="flex flex-col md:flex-row items-center justify-center py-24 bg-white space-y-8 md:space-y-0 md:space-x-8">
       {/* Left Section */}
       <div className="bg-red-600 text-white p-6 md:p-12 rounded-r-[40px] flex flex-col items-start">
-        <h2 className="text-2xl md:text-5xl font-semibold leading-tight">
+        <h2 className="text-2xl md:text-5xl font-serif leading-tight">
           Kami membawa visi untuk menjadi gerakan utama dalam mempersiapkan generasi muda menuju Indonesia emas 2045.
         </h2>
-        <hr className="border-white w-1/4 my-4" />
-        <p className="text-base md:text-lg">
-          Generasi muda merupakan fondasi untuk masa depan yang lebih baik. Mereka akan menjadi sumber daya terpenting dalam menghadapi tantangan global dan berperan aktif dalam memajukan berbagai sektor dan menciptakan perubahan positif yang berkelanjutan.
+        <hr className="border border-white px-48 w-1/4 my-6" />
+        <p className="text-base md:text-2xl font-light">
+        Generasi muda merupakan fondasi untuk masa depan yang lebih baik. Mereka akan menjadi sumber daya terpenting dalam menghadapi tantangan global dan berperan aktif dalam memajukan berbagai sektor dan menciptakan perubahan positif yang berkelanjutan.
         </p>
       </div>
 
