@@ -12,7 +12,7 @@ const programs = [
 
 const Program = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container py-24 mx-auto">
       <div className="flex flex-col items-center space-y-8">
         <h2 className="text-3xl font-semibold">Program</h2>
         

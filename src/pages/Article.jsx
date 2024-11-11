@@ -46,7 +46,7 @@ const Artikel = () => {
           {articles.map((article, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-white transition-all duration-300 transform hover:-translate-y-2 hover:translate-x-2 border-l-4 border-b-4 border-r border-t border-transparent hover:border-[#F92020] shadow-md rounded-lg overflow-hidden hover:shadow-lg"
             >
               <img
                 src={article.image}
@@ -55,9 +55,9 @@ const Artikel = () => {
               />
               <div className="p-4">
                 <h3 className="font-semibold text-lg mb-2">{article.title}</h3>
-                <p className="text-sm text-gray-600 mb-2 text-justify">
+                <p className="text-xs text-gray-600 mb-2 text-justify">
                   {article.description}{" "}
-                  <span className="text-red-500">Baca Selengkapnya</span>
+                  <span className="text-red-500 cursor-pointer">Baca Selengkapnya</span>
                 </p>
                 <div className="text-gray-500 text-xs flex justify-between items-center">
                   <span>{article.date}</span>
