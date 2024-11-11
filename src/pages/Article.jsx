@@ -37,7 +37,7 @@ const Artikel = () => {
     <section className="py-24">
       <div className="px-4 relative md:px-10 lg:px-20 py-8">
         <h2 className="text-3xl font-bold mb-6">Artikel</h2>
-        <div className="flex absolute top-8 right-20 justify-end mb-4">
+        <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
           <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
             Lihat Artikel Lainnya
           </button>
