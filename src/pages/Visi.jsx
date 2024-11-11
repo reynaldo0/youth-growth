@@ -4,6 +4,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion, AnimatePresence } from "framer-motion"; // Importing framer-motion
 import visionSlides from "../docs/visi";
 
 const VisionSection = () => {
@@ -47,22 +48,68 @@ const VisionSection = () => {
           {visionSlides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col items-center space-y-4 mx-32">
-                <img src={slide.image} alt={slide.alt} className="w-40 h-40" />
-                <h3 className="text-xl font-semibold md:text-2xl border-b-2 border-black pb-2">{slide.title}</h3>
-                <p className="text-base md:text-xl text-gray-700 px-5">{slide.description}</p>
+                {/* Title with Slide-in Effect from Right */}
+                
+                {/* Image with Fade-in Effect */}
+                <AnimatePresence mode="wait">
+                  {activeIndex === index && (
+                    <motion.img
+                      key={`img-${slide.image}`} // Ensure a unique key for image
+                      src={slide.image}
+                      alt={slide.alt}
+                      className="w-40 h-40"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  )}
+                </AnimatePresence>
+
+                {/* Title with Slide-in Effect */}
+                <AnimatePresence mode="wait">
+                  {activeIndex === index && (
+                    <motion.h3
+                      key={`title-${slide.title}`} // Ensure a unique key for title
+                      className="text-xl font-semibold md:text-2xl border-b-2 border-black pb-2"
+                      initial={{ x: "100%" }}
+                      animate={{ x: 0 }}
+                      exit={{ x: "-100%" }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {slide.title}
+                    </motion.h3>
+                  )}
+                </AnimatePresence>
+
+                {/* Description with Slide-in Effect from Left */}
+                <AnimatePresence mode="wait">
+                  {activeIndex === index && (
+                    <motion.p
+                      key={`desc-${slide.description}`} // Ensure a unique key for description
+                      className="text-base md:text-xl text-gray-700 px-5"
+                      initial={{ x: "-100%" }}
+                      animate={{ x: 0 }}
+                      exit={{ x: "100%" }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {slide.description}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Custom Pagination Dots */}
-        <div className="flex space-x-2 mt-4">
+        <div className="flex space-x-5 mt-4">
           {visionSlides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full ${
-                index === activeIndex ? "bg-red-600" : "bg-gray-400"
+              className={`w-4 h-4 rounded-full ${
+                index === activeIndex ? "bg-black" : "bg-transparent border-2 border-black"
               }`}
             />
           ))}
