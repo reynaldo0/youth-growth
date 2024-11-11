@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Program from "./pages/Program";
 import Visi from "./pages/Visi";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Home />
       <Visi/>
+      <Program/>
     </>
   );
 }
