@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 
-const Home = ({ height = '80vh' }) => {
+const Home = ({ height = "80vh" }) => {
   const typedElement = useRef(null);
 
   const growthTexts = ["Growth", "Innovation", "Empowerment", "Opportunity"];
@@ -32,7 +32,7 @@ const Home = ({ height = '80vh' }) => {
       setPrevBgImageIndex(bgImageIndex);
       setBgImageIndex((prevIndex) => (prevIndex + 1) % 4);
       setTextAnimating(true);
-      
+
       // Update `growthText` after a short delay for smoother transition
       setTimeout(() => {
         setGrowthText(growthTexts[(bgImageIndex + 1) % growthTexts.length]);
@@ -60,44 +60,59 @@ const Home = ({ height = '80vh' }) => {
 
   return (
     <div className="md:mx-12 md:pt-16 sm:min-h-screen">
-      <div className="relative overflow-hidden md:rounded-b-3xl" style={{ height: height }}>
+      <div
+        className="relative overflow-hidden md:rounded-b-3xl"
+        style={{ height: height }}
+      >
         {/* Background Images with Side Sliding Effect */}
         {[0, 1, 2, 3].map((index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === bgImageIndex
-              ? "translate-x-0 opacity-100"
-              : index === prevBgImageIndex
-              ? "-translate-x-full opacity-0"
-              : "translate-x-full opacity-0"
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+              index === bgImageIndex
+                ? "translate-x-0 opacity-100"
+                : index === prevBgImageIndex
+                ? "-translate-x-full opacity-0"
+                : "translate-x-full opacity-0"
             }`}
             style={{
               backgroundImage: `url('/background/bg${index + 1}.png')`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              height: '100%',
+              height: "100%",
             }}
           />
         ))}
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black opacity-30"></div>
 
         {/* Content centered both vertically and horizontally */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-5 md:ml-12" style={{ height: '100%' }}>
+        <div
+          className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-5 md:ml-12"
+          style={{ height: "100%" }}
+        >
           <h1 className="text-4xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide">
-            <span className="text-[#F92020]">Youth </span> <br className="md:hidden"/>
+            <span className="text-[#F92020]">Youth </span>{" "}
+            <br className="md:hidden" />
             <span
-              className={`transition-all duration-700 pb-2 ease-in-out transform ${textAnimating
-                ? "translate-y-8 opacity-0"
-                : "translate-y-0 opacity-100"
+              className={`transition-all duration-700 pb-2 ease-in-out transform ${
+                textAnimating
+                  ? "translate-y-8 opacity-0"
+                  : "translate-y-0 opacity-100"
               }`}
               style={{
                 display: "inline-block",
               }}
             >
-              {growthText}
+              <span
+                className={
+                  growthText === "Growth" ? "text-black" : "text-white"
+                }
+              >
+                {growthText}
+              </span>
             </span>
           </h1>
 
@@ -119,7 +134,11 @@ const Home = ({ height = '80vh' }) => {
           <button
             key={index}
             onClick={() => handlePaginationClick(index)}
-            className={`w-3 h-3 rounded-full ${bgImageIndex === index ? 'bg-black' : 'bg-transparent border-2 border-black opacity-50 hover:opacity-75'}`}
+            className={`w-3 h-3 rounded-full ${
+              bgImageIndex === index
+                ? "bg-black"
+                : "bg-transparent border-2 border-black opacity-50 hover:opacity-75"
+            }`}
           />
         ))}
       </div>
