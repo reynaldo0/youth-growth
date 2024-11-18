@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Artikel from "./pages/Article";
 import Calendar from "./pages/Calender";
+import EventsSection from "./pages/Event";
 import Home from "./pages/Home";
 import Program from "./pages/Program";
 import Testimonial from "./pages/Testimonial";
@@ -18,6 +19,7 @@ function App() {
       <Artikel/>
       <Calendar/>
       <Testimonial/>
+      <EventsSection/>
     </>
   );
 }
