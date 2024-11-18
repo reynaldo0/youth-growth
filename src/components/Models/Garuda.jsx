@@ -37,6 +37,7 @@ function Garuda(props) {
         position={[-0.019, 0.633, 0.426]}
         rotation={[1.708, -0.008, 0.002]}
         scale={0.214}
+        
       />
     </group>
   );
