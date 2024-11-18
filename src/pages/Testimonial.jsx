@@ -1,9 +1,6 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const testimonials = [
   {
@@ -22,16 +19,35 @@ const testimonials = [
       "Youth-Growth mempersiapkan saya menghadapi dunia kerja. Career Program dan informasi beasiswa sangat membantu saya berkembang. Komunitasnya pun penuh dengan orang-orang yang memotivasi. Platform ini sangat saya rekomendasikan!",
     image: "https://via.placeholder.com/150", // Ganti dengan URL gambar asli
   },
+  {
+    name: "Rina Sari",
+    title: "Mahasiswa",
+    organization: "Universitas ABC",
+    testimonial:
+      "Youth-Growth memberikan wawasan yang sangat berguna untuk dunia kerja. Saya merasa lebih percaya diri menghadapi tantangan ke depan.",
+    image: "https://via.placeholder.com/150", // Ganti dengan URL gambar asli
+  },
 ];
 
 const Testimonials = () => {
+  const [activeIndex, setActiveIndex] = useState(0); // Indeks slide aktif
+  const swiperRef = useRef(null); // Referensi untuk Swiper
+
+  // Fungsi untuk berpindah ke slide tertentu
+  const goToSlide = (index) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(index); // Pindah ke slide tertentu
+      setActiveIndex(index); // Perbarui indeks aktif
+    }
+  };
+
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">Testimoni</h2>
         <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} // Perbarui indeks saat slide berubah
+          onSwiper={(swiper) => (swiperRef.current = swiper)} // Simpan instance Swiper ke referensi
           spaceBetween={30}
           slidesPerView={2}
         >
@@ -66,6 +82,20 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        {/* Custom Pagination Dots */}
+        <div className="flex justify-center space-x-3 md:space-x-5 mt-4">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)} // Navigasi ke slide tertentu
+              className={`w-3 h-3 md:w-4 md:h-4 rounded-full ${
+                index === activeIndex
+                  ? "bg-black"
+                  : "bg-transparent border-2 border-black"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
