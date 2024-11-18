@@ -83,7 +83,7 @@ const Testimonials = () => {
           ))}
         </Swiper>
         {/* Custom Pagination Dots */}
-        <div className="flex justify-center space-x-3 md:space-x-5 mt-4">
+        <div className="flex justify-center space-x-3 md:space-x-5 mt-5">
           {testimonials.map((_, index) => (
             <button
               key={index}
