@@ -1,116 +1,77 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
+import React, { useState, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { motion, AnimatePresence } from "framer-motion";
+import visionSlides from "../docs/visi";
 import Garuda from "../components/Models/Garuda";
+import { Environment, OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
-const useScrollAnimation = (elementRef, callback) => {
-  const handleScroll = () => {
-    const element = elementRef.current;
-
-    if (element) {
-      const elementPosition = element.getBoundingClientRect();
-
-      callback(element, elementPosition);
-    }
-  };
-
-  useEffect(() => {
-    if (elementRef.current) {
-      window.addEventListener("scroll", handleScroll);
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, []);
-};
-
-const About = () => {
-  const lineRef = useRef(null);
-
-  useScrollAnimation(lineRef, (element, position) => {
-    const positionTop = position.top - window.innerHeight;
-    const marginRight = 16;
-
-    if (positionTop < 0) {
-      const newWidth = Math.abs(positionTop);
-      const maxWidth =
-        window.innerWidth - element.getBoundingClientRect().left - marginRight;
-      element.style.width = `${Math.min(newWidth, maxWidth)}px`;
-    }
-  });
+const VisionSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
 
   // State for responsive canvas size
   const canvasRef = useRef(null);
   const [scale, setScale] = useState(1); // Scale for 3D object
 
-  useEffect(() => {
-    const updateCanvasSize = () => {
-      // Dynamically scale 3D object based on viewport width
-      const newScale = window.innerWidth < 768 ? 0.8 : 1; // For mobile, scale down
-      setScale(newScale);
-    };
+  const handleSlideChange = () => {
+    setActiveIndex(swiperRef.current.swiper.activeIndex);
+  };
 
-    // Update canvas size on mount and window resize
-    updateCanvasSize();
-    window.addEventListener("resize", updateCanvasSize);
-
-    return () => {
-      window.removeEventListener("resize", updateCanvasSize);
-    };
-  }, []);
+  const goToSlide = (index) => {
+    swiperRef.current.swiper.slideTo(index);
+    setActiveIndex(index);
+  };
 
   return (
-    <section
-      id="about"
-      className="bg-cover bg-center bg-repeat"
-      style={{ backgroundImage: "url('/bg/background.png')" }}
-    >
-      <div className="container mx-auto px-4 pb-36 pt-16 md:pb-0 md:pt-0">
-        <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-0 items-center justify-between">
-          {/* 3D Model */}
-          <div className="relative w-full md:w-1/2 flex items-center justify-center">
-            <div ref={canvasRef} className="w-full h-[200px] scale-150 md:scale-100 mr-60 md:mr-0 sm:h-[500px] md:h-[500px]">
-              <Canvas className="md:pt-20"
-                camera={{ position: [0, 1, 3], fov: 50 }}
-                style={{ width: "100%", height: "100%" }}
-              >
-                <Environment preset="dawn" />
-                <ambientLight intensity={0.5} />
-                <spotLight
-                  position={[10, 10, 10]}
-                  angle={0.15}
-                  penumbra={1}
-                  intensity={1}
-                  castShadow
-                />
-                <Garuda scale={scale} /> {/* Apply dynamic scale */}
-                <OrbitControls enableZoom={false}  />
-              </Canvas>
-            </div>
-          </div>
-
-          {/* Text Section */}
-          <div className="w-full md:w-1/2">
-            <h1 className="relative mb-8 text-4xl font-semibold text-primary-500 md:text-5xl">
-              lorem <span className="text-yellow z-10">lorem</span>
-              <div ref={lineRef} className="line bg-yellow z-10"></div>
-            </h1>
-            <p
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
-              id="rebelliumDesc"
-              className="text-sm text-secondary-200 md:max-w-2xl md:text-base sm:px-4 md:px-0"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              repellat hic laborum cupiditate quo excepturi voluptatibus porro
-              neque dolorum quas.
-            </p>
-          </div>
-        </div>
+    <div className="flex flex-col md:flex-row items-center justify-center  md:py-24 bg-white space-y-8 md:space-y-0 md:space-x-8">
+      {/* Left Section */}
+      <div className="bg-red-600 text-white p-6 md:p-12 rounded-b-[20px] md:rounded-r-[40px] flex flex-col items-start space-y-4 md:space-y-6">
+        <h2 className="text-xl md:text-5xl font-serif leading-tight text-left">
+          Kami membawa visi untuk menjadi gerakan utama dalam mempersiapkan
+          generasi muda menuju Indonesia emas 2045.
+        </h2>
+        <hr className="border border-white w-1/2 md:w-1/4 my-4 md:my-6" />
+        <p className="text-sm md:text-2xl font-light text-left">
+          Generasi muda merupakan fondasi untuk masa depan yang lebih baik.
+          Mereka akan menjadi sumber daya terpenting dalam menghadapi tantangan
+          global dan berperan aktif dalam memajukan berbagai sektor dan
+          menciptakan perubahan positif yang berkelanjutan.
+        </p>
       </div>
-    </section>
+
+      {/* Right Section with Custom Pagination */}
+      <div className="flex flex-col items-center text-center space-y-4 w-full md:w-[130%]">
+        <div
+          ref={canvasRef}
+          className="w-full h-[200px] scale-150 md:scale-100 mr-60 md:mr-0 md:h-[500px]"
+        >
+          <Canvas
+            className="md:pt-20"
+            camera={{ position: [0, 1, 3], fov: 50 }}
+            style={{ width: "100%", height: "100%" }}
+          >
+            <Environment preset="dawn" />
+            <ambientLight intensity={0.5} />
+            <spotLight
+              position={[10, 10, 10]}
+              angle={0.15}
+              penumbra={1}
+              intensity={1}
+              castShadow
+            />
+            <Garuda scale={scale} /> {/* Apply dynamic scale */}
+            <OrbitControls enableZoom={false} />
+          </Canvas>
+        </div>
+
+      </div>
+    </div>
   );
 };
 
-export default About;
+export default VisionSection;
