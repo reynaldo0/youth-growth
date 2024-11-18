@@ -10,7 +10,7 @@ import Garuda from "../components/Models/Garuda";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-const VisionSection = () => {
+const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
 
@@ -28,7 +28,7 @@ const VisionSection = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-center  md:py-24 bg-white space-y-8 md:space-y-0 md:space-x-8">
+    <div className="flex flex-col md:flex-row items-center justify-center md:py-24 space-y-8 md:space-y-0 md:space-x-8 bg-red-600 md:bg-transparent">
       {/* Left Section */}
       <div className="bg-red-600 text-white p-6 md:p-12 rounded-b-[20px] md:rounded-r-[40px] flex flex-col items-start space-y-4 md:space-y-6">
         <h2 className="text-xl md:text-5xl font-serif leading-tight text-left">
@@ -45,13 +45,13 @@ const VisionSection = () => {
       </div>
 
       {/* Right Section with Custom Pagination */}
-      <div className="flex bg-red-600 md:bg-transparent flex-col items-center text-center space-y-4 w-full md:w-[130%]">
+      <div className="flex flex-col items-center text-center space-y-4 w-full md:w-[130%]">
         <div
           ref={canvasRef}
-          className="w-full h-[200px] scale-125 md:scale-100 mr-60 md:mr-0 md:h-[500px]"
+          className="w-full h-[200px] scale-125 md:scale-100 mr-40 md:mr-0 md:h-[500px]"
         >
           <Canvas
-            className="md:pt-20"
+            className="pt-24"
             camera={{ position: [0, 1, 3], fov: 50 }}
             style={{ width: "100%", height: "100%" }}
           >
@@ -74,4 +74,4 @@ const VisionSection = () => {
   );
 };
 
-export default VisionSection;
+export default About;

@@ -57,10 +57,12 @@ const CalendarSection = () => {
   const highlightDatesGreen = [1, 8, 15, 22, 29]; // Highlight these dates with green
 
   return (
-    <section className="bg-white py-8 px-4 md:px-12" id="calender">
+    <section className="bg-white py-8 px-4 md:px-0" id="calender">
+      <h2 className="text-white pl-20 py-2 rounded-r-full bg-red-500 inline-block px-10 font-serif text-4xl mb-4">
+        Kalender
+      </h2>
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <h2 className="text-red-500 font-bold text-xl mb-4">Kalender</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Kalender */}
           <div className="col-span-1">
@@ -130,11 +132,11 @@ const CalendarSection = () => {
                 <h3 className="text-red-500 font-bold text-xl">
                   Yang akan datang
                 </h3>
-                <button className="text-white font-medium bg-red-600 px-3 py-1 rounded-lg text-sm">
+                <button className="text-white font-medium bg-red-500 px-5 py-2 rounded-full text-sm">
                   Lihat Agenda Lainnya
                 </button>
               </div>
-              <div className="bg-red-500 p-4 grid grid-cols-1 md:grid-cols-2 rounded-xl gap-4 flex-grow">
+              <div className="bg-red-500 p-4 grid grid-cols-1 md:grid-cols-2 rounded-2xl gap-4 flex-grow">
                 {/* Left Column */}
                 <div className="space-y-3 border-r-2 border-white pr-6">
                   {events.slice(0, 5).map((event, index) => (
