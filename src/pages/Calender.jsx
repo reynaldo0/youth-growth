@@ -57,7 +57,7 @@ const CalendarSection = () => {
   const highlightDatesGreen = [1, 8, 15, 22, 29]; // Highlight these dates with green
 
   return (
-    <section className="bg-white py-8 px-4 md:px-12">
+    <section className="bg-white py-8 px-4 md:px-12" id="calender">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <h2 className="text-red-500 font-bold text-xl mb-4">Kalender</h2>

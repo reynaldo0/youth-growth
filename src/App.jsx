@@ -19,8 +19,8 @@ function App() {
       <Program/>
       <Artikel/>
       <Calendar/>
-      <Testimonial/>
       <EventsSection/>
+      <Testimonial/>
       <Footer/>
     </>
   );

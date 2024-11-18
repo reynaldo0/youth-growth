@@ -158,7 +158,7 @@ const EventsSection = () => {
   return (
     <section className="py-16 md:px-10" id="events">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-red-800 text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
           Acara untuk Mewujudkan Indonesia Emas 2024
         </h2>
 
