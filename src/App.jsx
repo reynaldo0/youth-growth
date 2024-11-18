@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Artikel from "./pages/Article";
@@ -20,6 +21,7 @@ function App() {
       <Calendar/>
       <Testimonial/>
       <EventsSection/>
+      <Footer/>
     </>
   );
 }
