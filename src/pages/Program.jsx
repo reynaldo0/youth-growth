@@ -28,10 +28,6 @@ const Program = () => {
             </div>
           ))}
         </div>
-        
-        <button className="text-red-500 font-semibold text-lg">
-          Selengkapnya Tentang Program
-        </button>
       </div>
     </section>
   );
