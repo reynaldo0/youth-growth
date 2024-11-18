@@ -28,7 +28,7 @@ const VisionSection = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center  md:py-24 bg-white space-y-8 md:space-y-0 md:space-x-8">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-center  md:py-24 bg-white space-y-8 md:space-y-0 md:space-x-8">
       {/* Left Section */}
       <div className="bg-red-600 text-white p-6 md:p-12 rounded-b-[20px] md:rounded-r-[40px] flex flex-col items-start space-y-4 md:space-y-6">
         <h2 className="text-xl md:text-5xl font-serif leading-tight text-left">
@@ -45,10 +45,10 @@ const VisionSection = () => {
       </div>
 
       {/* Right Section with Custom Pagination */}
-      <div className="flex flex-col items-center text-center space-y-4 w-full md:w-[130%]">
+      <div className="flex bg-red-600 md:bg-transparent flex-col items-center text-center space-y-4 w-full md:w-[130%]">
         <div
           ref={canvasRef}
-          className="w-full h-[200px] scale-150 md:scale-100 mr-60 md:mr-0 md:h-[500px]"
+          className="w-full h-[200px] scale-125 md:scale-100 mr-60 md:mr-0 md:h-[500px]"
         >
           <Canvas
             className="md:pt-20"
