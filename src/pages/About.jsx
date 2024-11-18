@@ -28,7 +28,7 @@ const About = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center md:py-24 space-y-8 md:space-y-0 md:space-x-8 bg-red-600 md:bg-transparent">
+    <div className="flex flex-col md:flex-row items-center justify-center md:py-24 space-y-8 md:space-y-0 md:space-x-8 bg-red-600 md:bg-transparent" id="about">
       {/* Left Section */}
       <div className="bg-red-600 text-white p-6 md:p-12 rounded-b-[20px] md:rounded-r-[40px] flex flex-col items-start space-y-4 md:space-y-6">
         <h2 className="text-xl md:text-5xl font-serif leading-tight text-left">

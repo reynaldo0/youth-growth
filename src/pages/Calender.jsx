@@ -57,8 +57,8 @@ const CalendarSection = () => {
   const highlightDatesGreen = [1, 8, 15, 22, 29]; // Highlight these dates with green
 
   return (
-    <section className="bg-white py-8 px-4 md:px-0" id="calender">
-      <h2 className="text-white pl-20 py-2 rounded-r-full bg-red-500 inline-block px-10 font-serif text-4xl mb-4">
+    <section className="bg-white py-24" id="calender">
+      <h2 className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4">
         Kalender
       </h2>
       <div className="max-w-6xl mx-auto">
@@ -132,13 +132,13 @@ const CalendarSection = () => {
                 <h3 className="text-red-500 font-bold text-xl">
                   Yang akan datang
                 </h3>
-                <button className="text-white font-medium bg-red-500 px-5 py-2 rounded-full text-sm">
+                <button className="text-white font-medium bg-red-500 px-2 md:px-5 py-2 rounded-full text-sm">
                   Lihat Agenda Lainnya
                 </button>
               </div>
               <div className="bg-red-500 p-4 grid grid-cols-1 md:grid-cols-2 rounded-2xl gap-4 flex-grow">
                 {/* Left Column */}
-                <div className="space-y-3 border-r-2 border-white pr-6">
+                <div className="space-y-3 md:border-r-2 md:border-white md:pr-6">
                   {events.slice(0, 5).map((event, index) => (
                     <div
                       key={index}
@@ -153,7 +153,7 @@ const CalendarSection = () => {
                       </div>
                       {/* Align the bookmark icon vertically */}
                       <div className="flex justify-center items-center">
-                        <Bookmark className="w-4 h-4 text-white hover:text-gray-200" />
+                        <Bookmark className="w-6 h-6 text-white hover:text-gray-200" />
                       </div>
                     </div>
                   ))}
@@ -175,7 +175,7 @@ const CalendarSection = () => {
                       </div>
                       {/* Align the bookmark icon vertically */}
                       <div className="flex justify-center items-center">
-                        <Bookmark className="w-4 h-4 text-white hover:text-gray-200" />
+                        <Bookmark className="w-6 h-6 text-white hover:text-gray-200" />
                       </div>
                     </div>
                   ))}

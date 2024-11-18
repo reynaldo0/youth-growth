@@ -75,7 +75,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-12 bg-white" id="testimoni">
+    <section className="py-24 bg-white" id="testimoni">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center md:text-start mb-8">Testimoni</h2>
         <Swiper
