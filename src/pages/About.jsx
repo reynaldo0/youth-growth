@@ -63,15 +63,15 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-cover bg-center bg-repeat pb-36 pt-16"
+      className="bg-cover bg-center bg-repeat"
       style={{ backgroundImage: "url('/bg/background.png')" }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pb-36 pt-16 md:pb-0 md:pt-0">
         <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-0 items-center justify-between">
           {/* 3D Model */}
           <div className="relative w-full md:w-1/2 flex items-center justify-center">
-            <div ref={canvasRef} className="w-full h-[200px] scale-150 md:scale-100 mr-60 md:mr-0 sm:h-[400px] md:h-[500px]">
-              <Canvas
+            <div ref={canvasRef} className="w-full h-[200px] scale-150 md:scale-100 mr-60 md:mr-0 sm:h-[500px] md:h-[500px]">
+              <Canvas className="md:pt-20"
                 camera={{ position: [0, 1, 3], fov: 50 }}
                 style={{ width: "100%", height: "100%" }}
               >
@@ -85,7 +85,7 @@ const About = () => {
                   castShadow
                 />
                 <Garuda scale={scale} /> {/* Apply dynamic scale */}
-                <OrbitControls />
+                <OrbitControls enableZoom={false}  />
               </Canvas>
             </div>
           </div>
