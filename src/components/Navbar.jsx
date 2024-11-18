@@ -19,8 +19,13 @@ const Navbar = () => {
     <header>
       <nav className="fixed left-0 top-0 z-[99999] md:px-10 w-full border-white shadow-sm bg-white backdrop-blur-md bg-opacity-80 border rounded-lg">
         <div className="container mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4">
-          <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <p className="text-2xl text-[#F92020] font-bold">Youth <span className="text-black">Growth</span></p>
+          <a
+            href="#"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <p className="text-2xl text-[#F92020] font-bold">
+              Youth <span className="text-black">Growth</span>
+            </p>
           </a>
           <button
             ref={collapseBtnRef}
@@ -74,20 +79,21 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#calender"
-                  className="relative block rounded px-3 py-2 md:text-black before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#F92020]"
-                >
-                  Kalender
-                </a>
-              </li>
-              <li>
-                <a
                   href="#events"
                   className="relative block rounded px-3 py-2 md:text-black before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#F92020]"
                 >
                   Event
                 </a>
               </li>
+              <li>
+                <a
+                  href="#calender"
+                  className="relative block rounded px-3 py-2 md:text-black before:absolute before:-bottom-2 before:left-0 before:h-[2.5px] before:w-full before:scale-x-0 before:bg-current before:opacity-0 before:transition before:content-[''] hover:bg-gray-100 hover:before:scale-x-100 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:before:opacity-100 md:hover:bg-transparent md:hover:text-primary-100 md:dark:hover:bg-transparent md:dark:hover:text-[#F92020]"
+                >
+                  Kalender
+                </a>
+              </li>
+
               <li>
                 <a
                   href="#testimoni"

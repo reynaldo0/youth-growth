@@ -18,8 +18,8 @@ function App() {
       <Visi/>
       <Program/>
       <Artikel/>
-      <Calendar/>
       <EventsSection/>
+      <Calendar/>
       <Testimonial/>
       <Footer/>
     </>
