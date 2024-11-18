@@ -1,4 +1,5 @@
 import React from "react";
+import { Bookmark } from "lucide-react"; // Import Bookmark icon from Lucide React
 
 const CalendarSection = () => {
   const events = [
@@ -49,6 +50,12 @@ const CalendarSection = () => {
     },
   ];
 
+  const daysOfWeek = ["S", "S", "R", "K", "J", "S", "M"]; // Days of the week
+  const startDate = 28; // Starting from 28
+  const endDate = 1; // Ending on the 1st of the next month
+  const highlightDatesRed = [3, 10, 17, 24, 31]; // Highlight these dates with red
+  const highlightDatesGreen = [1, 8, 15, 22, 29]; // Highlight these dates with green
+
   return (
     <section className="bg-white py-8 px-4 md:px-12">
       <div className="max-w-6xl mx-auto">
@@ -60,23 +67,55 @@ const CalendarSection = () => {
             <div className="border rounded-lg p-4 h-full">
               <h3 className="text-lg font-bold mb-2">November 2024</h3>
               <div className="grid grid-cols-7 gap-2 text-center">
-                <div>S</div>
-                <div>S</div>
-                <div>R</div>
-                <div>K</div>
-                <div>J</div>
-                <div>M</div>
-                <div>S</div>
-                {[...Array(28).keys()].map((day) => (
-                  <div key={day} className="text-gray-400">
+                {daysOfWeek.map((day, index) => (
+                  <div
+                    key={index}
+                    className={day === "J" ? "text-green-500" : "text-gray-400"}
+                  >
+                    {day}
+                  </div>
+                ))}
+
+                {/* Starting from the 28th */}
+                {[...Array(4).keys()].map((day, index) => (
+                  <div key={index} className="text-gray-400">
+                    {startDate + day}
+                  </div>
+                ))}
+
+                {/* Continue from 1st till 18th */}
+                {[...Array(18).keys()].map((day, index) => (
+                  <div
+                    key={index + 4}
+                    className={`${
+                      highlightDatesRed.includes(day + 1)
+                        ? "text-red-500"
+                        : highlightDatesGreen.includes(day + 1)
+                        ? "text-green-500"
+                        : "text-gray-800"
+                    }`}
+                  >
                     {day + 1}
                   </div>
                 ))}
-                <div className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
+
+                {/* Style the 19th date with red background */}
+                <div className="bg-[#A1A1A1] text-white rounded-full w-8 h-8 flex items-center justify-center">
                   19
                 </div>
-                {[...Array(11).keys()].map((day) => (
-                  <div key={day} className="text-gray-400">
+
+                {/* Continue from 20th to 31st */}
+                {[...Array(12).keys()].map((day, index) => (
+                  <div
+                    key={index + 19}
+                    className={`${
+                      highlightDatesRed.includes(day + 20)
+                        ? "text-red-500"
+                        : highlightDatesGreen.includes(day + 20)
+                        ? "text-green-500"
+                        : "text-gray-800"
+                    }`}
+                  >
                     {day + 20}
                   </div>
                 ))}
@@ -86,73 +125,55 @@ const CalendarSection = () => {
 
           {/* Yang Akan Datang */}
           <div className="col-span-2">
-            <div className="bg-red-500 text-white rounded-lg p-6 h-full flex flex-col">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-white text-lg font-bold">
+            <div className="text-white rounded-lg p-4 h-full flex flex-col">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-red-500 font-bold text-xl">
                   Yang akan datang
                 </h3>
-                <button className="text-white font-medium bg-red-600 px-4 py-1 rounded-lg">
+                <button className="text-white font-medium bg-red-600 px-3 py-1 rounded-lg text-sm">
                   Lihat Agenda Lainnya
                 </button>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
-                <div className="space-y-4">
-                  {/* Kolom pertama */}
+              <div className="bg-red-500 p-4 grid grid-cols-1 md:grid-cols-2 rounded-xl gap-4 flex-grow">
+                {/* Left Column */}
+                <div className="space-y-3 border-r-2 border-white pr-6">
                   {events.slice(0, 5).map((event, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="text-white font-bold">{event.date}</div>
-                      <div className="border-l-2 border-dashed border-white pl-4">
-                        <h4 className="text-white font-semibold">
+                    <div
+                      key={index}
+                      className="flex items-center space-x-2 border-b border-white pb-3"
+                    >
+                      <div className="text-white font-medium">{event.date}</div>
+                      <div className="border-l-2 border-dashed border-white pl-2 flex-grow">
+                        <h4 className="text-white font-medium text-sm">
                           {event.title}
                         </h4>
-                        <p className="text-white text-sm">{event.team}</p>
+                        <p className="text-white text-xs">{event.team}</p>
                       </div>
-                      <div className="ml-auto">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="2"
-                          stroke="white"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 6h14M5 12h14m-7 6h7"
-                          />
-                        </svg>
+                      {/* Align the bookmark icon vertically */}
+                      <div className="flex justify-center items-center">
+                        <Bookmark className="w-4 h-4 text-white hover:text-gray-200" />
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="space-y-4">
-                  {/* Kolom kedua */}
+                {/* Right Column */}
+                <div className="space-y-3">
                   {events.slice(5).map((event, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="text-white font-bold">{event.date}</div>
-                      <div className="border-l-2 border-dashed border-white pl-4">
-                        <h4 className="text-white font-semibold">
+                    <div
+                      key={index}
+                      className="flex items-center space-x-2 border-b border-white pb-3"
+                    >
+                      <div className="text-white font-medium">{event.date}</div>
+                      <div className="border-l-2 border-dashed border-white pl-2 flex-grow">
+                        <h4 className="text-white font-medium text-sm">
                           {event.title}
                         </h4>
-                        <p className="text-white text-sm">{event.team}</p>
+                        <p className="text-white text-xs">{event.team}</p>
                       </div>
-                      <div className="ml-auto">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="2"
-                          stroke="white"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 6h14M5 12h14m-7 6h7"
-                          />
-                        </svg>
+                      {/* Align the bookmark icon vertically */}
+                      <div className="flex justify-center items-center">
+                        <Bookmark className="w-4 h-4 text-white hover:text-gray-200" />
                       </div>
                     </div>
                   ))}
