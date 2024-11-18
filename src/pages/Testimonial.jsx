@@ -37,7 +37,7 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center md:items-start">
+              <div className="bg-gray-100 p-6 pb-16 rounded-lg shadow-md flex flex-col md:flex-row items-center md:items-start">
                 {/* Gambar */}
                 <img
                   src={testimonial.image}
@@ -46,21 +46,22 @@ const Testimonials = () => {
                 />
                 {/* Teks */}
                 <div>
-                  <p className="text-gray-800 italic mb-4">
+                  <p className="text-gray-800 italic">
                     "{testimonial.testimonial}"
                   </p>
+                  <div className="w-28 h-[2px] my-5 bg-red-500"></div>
                   <h4 className="text-lg font-bold">{testimonial.name}</h4>
                   <p className="text-sm text-gray-600">{testimonial.title}</p>
                   <p className="text-sm text-gray-600">
                     {testimonial.organization}
                   </p>
-                  <a
-                    href="#"
-                    className="text-red-500 text-sm font-medium mt-4 inline-block"
-                  >
-                    Baca Lebih Lanjut
-                  </a>
                 </div>
+                <a
+                  href="#"
+                  className="absolute bottom-5 right-7 text-red-500 text-sm font-bold underline mt-4 inline-block"
+                >
+                  Baca Lebih Lanjut
+                </a>
               </div>
             </SwiperSlide>
           ))}
