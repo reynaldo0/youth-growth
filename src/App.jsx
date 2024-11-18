@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import About from "./pages/About";
 import Artikel from "./pages/Article";
 import Calendar from "./pages/Calender";
 import Home from "./pages/Home";
@@ -11,6 +12,7 @@ function App() {
     <>
       <Navbar />
       <Home />
+      <About/>
       <Visi/>
       <Program/>
       <Artikel/>
