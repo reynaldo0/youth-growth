@@ -40,7 +40,7 @@ const Program = () => {
               key={index}
               className="flex flex-col items-center space-y-4 group relative"
               data-aos="fade-up"
-              data-aos-duration={`${800 + index * 200}`}
+              data-aos-duration={`${800 + index * 300}`}
             >
               <img
                 src={program.icon}

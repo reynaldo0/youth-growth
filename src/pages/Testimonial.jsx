@@ -77,7 +77,13 @@ const Testimonials = () => {
   return (
     <section className="py-24 bg-white container mx-auto" id="testimoni">
       <div className="mx-5 md:mx-0">
-        <h2 className="text-3xl font-bold text-center md:text-start mb-8">Testimoni</h2>
+        <h2
+          className="text-3xl font-bold text-center md:text-start mb-8"
+          data-aos="fade-right"
+          data-aos-duration="800"
+        >
+          Testimoni
+        </h2>
         <Swiper
           onSlideChange={handleSlideChange} // Update active index on slide change
           onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -98,21 +104,49 @@ const Testimonials = () => {
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="w-24 h-24 md:w-52 md:h-full rounded-xl object-cover mb-4 md:mb-0 md:mr-6"
+                  data-aos="fade-up"
+                  data-aos-duration={`${800 + index * 300}`}
                 />
                 <div>
-                  <p className="text-gray-800 italic">
+                  <p
+                    className="text-gray-800 italic"
+                    data-aos="fade-up"
+                    data-aos-duration={`${900 + index * 300}`}
+                  >
                     "{testimonial.testimonial}"
                   </p>
-                  <div className="w-28 h-[2px] my-5 bg-red-500"></div>
-                  <h4 className="text-lg font-bold">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.title}</p>
-                  <p className="text-sm text-gray-600">
+                  <div
+                    className="w-28 h-[2px] my-5 bg-red-500"
+                    data-aos="fade-up"
+                    data-aos-duration={`${900 + index * 300}`}
+                  ></div>
+                  <h4
+                    className="text-lg font-bold"
+                    data-aos="fade-up"
+                    data-aos-duration={`${950 + index * 300}`}
+                  >
+                    {testimonial.name}
+                  </h4>
+                  <p
+                    className="text-sm text-gray-600"
+                    data-aos="fade-up"
+                    data-aos-duration={`${1000 + index * 300}`}
+                  >
+                    {testimonial.title}
+                  </p>
+                  <p
+                    className="text-sm text-gray-600"
+                    data-aos="fade-up"
+                    data-aos-duration={`${1100 + index * 300}`}
+                  >
                     {testimonial.organization}
                   </p>
                 </div>
                 <a
                   href="#"
                   className="absolute bottom-5 right-7 text-red-500 text-sm font-bold underline mt-4 inline-block"
+                  data-aos="fade-up"
+                  data-aos-duration={`${800 + index * 300}`}
                 >
                   Baca Lebih Lanjut
                 </a>

@@ -58,14 +58,22 @@ const CalendarSection = () => {
 
   return (
     <section className="bg-white py-24" id="calender">
-      <h2 className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4">
+      <h2
+        className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4"
+        data-aos="fade-right"
+        data-aos-duration="800"
+      >
         Kalender
       </h2>
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 items-start">
           {/* Kalender */}
-          <div className="col-span-1 mx-5">
+          <div
+            className="col-span-1 mx-5"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             <div className="border rounded-lg p-4 h-full">
               <h3 className="text-lg font-bold mb-2">November 2024</h3>
               <div className="grid grid-cols-7 gap-2 text-center">
@@ -80,7 +88,10 @@ const CalendarSection = () => {
 
                 {/* Starting from the 28th */}
                 {[...Array(4).keys()].map((day, index) => (
-                  <div key={index} className="text-gray-400 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex">
+                  <div
+                    key={index}
+                    className="text-gray-400 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex"
+                  >
                     {startDate + day}
                   </div>
                 ))}
@@ -129,10 +140,18 @@ const CalendarSection = () => {
           <div className="col-span-2">
             <div className="text-white rounded-lg p-4 h-full flex flex-col">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-red-500 font-bold text-xl">
+                <h3
+                  className="text-red-500 font-bold text-xl"
+                  data-aos="fade-right"
+                  data-aos-duration="800"
+                >
                   Yang akan datang
                 </h3>
-                <button className="text-white font-medium bg-red-500 px-2 md:px-5 py-2 rounded-full text-sm">
+                <button
+                  className="text-white font-medium bg-red-500 px-2 md:px-5 py-2 rounded-full text-sm"
+                  data-aos="fade-left"
+                  data-aos-duration="800"
+                >
                   Lihat Agenda Lainnya
                 </button>
               </div>
@@ -143,6 +162,8 @@ const CalendarSection = () => {
                     <div
                       key={index}
                       className="flex items-center space-x-2 border-b border-white pb-3"
+                      data-aos="fade-up"
+                      data-aos-duration={`${800 + index * 300}`}
                     >
                       <div className="text-white font-medium">{event.date}</div>
                       <div className="border-l-2 border-dashed border-white pl-2 flex-grow">
@@ -165,6 +186,8 @@ const CalendarSection = () => {
                     <div
                       key={index}
                       className="flex items-center space-x-2 border-b border-white pb-3"
+                      data-aos="fade-up"
+                      data-aos-duration={`${800 + index * 300}`}
                     >
                       <div className="text-white font-medium">{event.date}</div>
                       <div className="border-l-2 border-dashed border-white pl-2 flex-grow">

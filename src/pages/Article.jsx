@@ -67,7 +67,7 @@ const Artikel = () => {
                   ? "bg-gray-100 border-red-500"
                   : "bg-white hover:-translate-y-2 hover:translate-x-2 hover:border-[#F92020]"
               }`}
-              style={{ height: expandedIndex === index ? "auto" : "450px" }} // Tetapkan tinggi tetap saat tidak aktif
+              style={{ height: expandedIndex === index ? "auto" : "450px" }}
               data-aos="fade-up"
               data-aos-duration={`${800 + index * 300}`}
             >
