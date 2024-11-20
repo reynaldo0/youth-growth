@@ -86,7 +86,7 @@ const Home = ({ height = "80vh" }) => {
         ))}
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
 
         {/* Content centered both vertically and horizontally */}
         <div
@@ -110,6 +110,10 @@ const Home = ({ height = "80vh" }) => {
                 className={
                   growthText === "Growth" ? "text-black" : "text-white"
                 }
+                style={{
+                  WebkitTextStroke:
+                    growthText === "Growth" ? "2px white" : undefined,
+                }}
               >
                 {growthText}
               </span>
@@ -121,7 +125,7 @@ const Home = ({ height = "80vh" }) => {
           </p>
 
           <a href="#map">
-            <button className="border-2 border-white bg-[#F92020] text-white text-xl sm:text-2xl px-8 sm:px-12 py-2 rounded-full font-mono hover:bg-black hover:text-white">
+            <button className="border-2 border-white bg-[#F92020] text-white text-xl sm:text-2xl px-8 sm:px-12 py-2 rounded-full font-mono hover:bg-[#F92020]/90">
               Jelajahi
             </button>
           </a>

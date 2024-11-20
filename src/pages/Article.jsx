@@ -3,30 +3,30 @@ import { Bookmark, Heart } from "lucide-react";
 
 const articles = [
   {
-    title: "Scholarships : Your Gateway to Academic Excellence",
+    title: "Beasiswa: Gerbang Anda Menuju Keunggulan Akademik di Indonesia",
     description:
-      "With countless scholarship opportunities available, youth can pursue higher education without the burden of financial stress. Scholarships not only alleviate monetary concerns but also recognize and reward academic achievement, opening new avenues for personal and professional growth. By applying for these opportunities, young people",
+      "Dengan banyaknya kesempatan beasiswa yang tersedia, kaum muda dapat melanjutkan pendidikan tinggi tanpa beban stres finansial. Beasiswa tidak hanya meringankan masalah keuangan, tetapi juga mengakui dan menghargai pencapaian akademik, membuka peluang baru untuk pertumbuhan pribadi dan profesional. Dengan mengajukan permohonan untuk kesempatan ini, kaum muda",
     date: "20-11-2024",
     image: "/article/1.png",
   },
   {
-    title: "Unlocking Opportunities with Youth Empowerment Programs",
+    title: "Membuka Peluang dengan Program Pemberdayaan Pemuda",
     description:
-      "Youth empowerment programs are paving the way for the next generation to develop essential skills, from leadership to social awareness. These initiatives not only provide resources and mentorship but also inspire young people to take charge of their futures and become agents of change in their communities. Through workshops, training sessions, and collab",
+      "Program pemberdayaan pemuda membuka jalan bagi generasi berikutnya untuk mengembangkan keterampilan penting, mulai dari kepemimpinan hingga kesadaran sosial. Inisiatif ini tidak hanya menyediakan sumber daya dan bimbingan, tetapi juga menginspirasi kaum muda untuk mengambil kendali atas masa depan mereka dan menjadi agen perubahan di komunitas mereka. Melalui lokakarya, sesi pelatihan, dan kolaborasi",
     date: "20-10-2024",
     image: "/article/2.png",
   },
   {
-    title: "Community Engagement : Building Stronger Connections",
+    title: "Keterlibatan Komunitas: Membangun Koneksi yang Lebih Kuat",
     description:
-      "Engaging in community work not only fosters a sense of belonging but also enhances collaboration among youth. By volunteering and participating in local projects, young people can strengthen their social ties and develop a deeper understanding of the challenges faced by their communities. This active involvement promotes empathy, teamwork, and led",
+      "Terlibat dalam pekerjaan komunitas tidak hanya menumbuhkan rasa kebersamaan, tetapi juga meningkatkan kolaborasi di antara pemuda. Dengan menjadi sukarelawan dan berpartisipasi dalam proyek lokal, kaum muda dapat memperkuat ikatan sosial mereka dan mengembangkan pemahaman yang lebih dalam tentang tantangan yang dihadapi oleh komunitas mereka. Keterlibatan aktif ini mempromosikan empati, kerja sama, dan kepemimpinan",
     date: "15-10-2024",
     image: "/article/3.png",
   },
   {
-    title: "How Internships Can Shape Your Career Path",
+    title: "Bagaimana Magang Dapat Membentuk Jalur Karir Anda",
     description:
-      "Internships provide invaluable hands-on experience, helping young individuals connect academic knowledge to real-world applications. By participating in internships, youth can build professional networks, learn workplace skills, and gain a clearer understanding of their career goals. This practical exposure not only enhances their resumes but also equips the",
+      "Magang memberikan pengalaman langsung yang sangat berharga, membantu individu muda menghubungkan pengetahuan akademis dengan aplikasi dunia nyata. Dengan berpartisipasi dalam magang, pemuda dapat membangun jaringan profesional, mempelajari keterampilan di tempat kerja, dan mendapatkan pemahaman yang lebih jelas tentang tujuan karir mereka. Paparan praktis ini tidak hanya meningkatkan resume mereka, tetapi juga mempersiapkan mereka",
     date: "29-09-2024",
     image: "/article/4.png",
   },
@@ -42,7 +42,7 @@ const Artikel = () => {
   return (
     <section className="py-16 md:py-24" id="article">
       <div className="px-4 relative md:px-10 lg:px-20 py-8">
-        <h2 className="text-3xl font-bold mb-6">Artikel</h2>
+        <h2 className="text-3xl text-red-500 font-bold mb-6">Artikel</h2>
         <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
           <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
             Lihat Artikel Lainnya
@@ -52,7 +52,7 @@ const Artikel = () => {
           {articles.map((article, index) => (
             <div
               key={index}
-              className={`transition-all duration-300 transform border-l-4 border-b-4 border-r border-t rounded-lg overflow-hidden shadow-md ${
+              className={`transition-all duration-300 transform hover:border-l-4 hover:border-b-4 hover:border-r hover:border-t rounded-lg overflow-hidden shadow-md ${
                 expandedIndex === index
                   ? "bg-gray-100 border-red-500"
                   : "bg-white hover:-translate-y-2 hover:translate-x-2 hover:border-[#F92020]"

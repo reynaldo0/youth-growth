@@ -26,7 +26,7 @@ const ToTopButton = () => {
   return (
     <button
       onClick={handleClick}
-      className={`fixed bottom-8 z-[99999] right-8 bg-red-500 hover:bg-red-500/90 hover:text-primary text-white rounded-full p-3 shadow shadow-white transition-transform duration-300 ${
+      className={`fixed bottom-8 z-[99999] right-8 bg-red-500 hover:bg-red-500/90 hover:text-primary text-white rounded-full p-3 transition-transform duration-300 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
       }`}
       style={{ transform: 'translateY(0)', transition: 'transform 0.3s ease' }}

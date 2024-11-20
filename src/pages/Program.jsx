@@ -22,7 +22,7 @@ const Program = () => {
               <img src={program.icon} alt={program.alt} className="w-24 h-24 md:w-32 md:h-32 duration-300 group-hover:scale-110" />
               
               {/* Hidden text, shown on hover */}
-              <p className="text-xl md:text-3xl font-bold text-gray-700 opacity-0 group-hover:opacity-100 absolute -top-[55px] md:-top-20 text-center transition-all duration-300 transform scale-90 group-hover:scale-100 group-hover:translate-y-0">
+              <p className="text-xl md:text-3xl font-bold text-red-500 opacity-0 group-hover:opacity-100 absolute -top-[55px] md:-top-20 text-center transition-all duration-300 transform scale-90 group-hover:scale-100 group-hover:translate-y-0">
                 {program.label}
               </p>
             </div>
