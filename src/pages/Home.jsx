@@ -124,7 +124,7 @@ const Home = ({ height = "80vh" }) => {
             Menuju <span ref={typedElement}></span> Emas 2024
           </p>
 
-          <a href="#map">
+          <a href="#about">
             <button className="border-2 border-white bg-[#F92020] text-white text-xl sm:text-2xl px-8 sm:px-12 py-2 rounded-full font-mono hover:bg-[#F92020]/90">
               Jelajahi
             </button>

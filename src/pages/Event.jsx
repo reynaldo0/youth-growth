@@ -156,7 +156,7 @@ const EventsSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24" id="events">
+    <section className="py-16 md:py-24" id="agenda">
       <h2 className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4">
         Agenda
       </h2>
