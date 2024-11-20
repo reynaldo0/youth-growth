@@ -94,7 +94,7 @@ const Home = ({ height = "80vh" }) => {
           style={{ height: "100%" }}
         >
           <h1
-            className="text-6xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide"
+            className="text-5xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide"
             data-aos="fade-up"
             data-aos-duration="800"
           >
@@ -128,7 +128,7 @@ const Home = ({ height = "80vh" }) => {
           </p>
 
           <a href="#about" data-aos="fade-up" data-aos-duration="1100">
-            <button className="border-2 border-white bg-[#F92020]/80 text-white text-xl sm:text-2xl px-8 sm:px-12 py-2 rounded-full font-medium hover:bg-[#F92020]/70 scale-150 md:scale-100">
+            <button className="border-2 border-white bg-[#F92020]/80 text-white text-2xl md:text-3xl px-12 py-3 md:px-12 md:py-2 rounded-full font-medium hover:bg-[#F92020]/70">
               Jelajahi
             </button>
           </a>

@@ -56,13 +56,13 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="#article" className="hover:underline">
-                    Artikel
+                  <a href="#agenda" className="hover:underline">
+                    Agenda
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="#agenda" className="hover:underline">
-                    Agenda
+                  <a href="#article" className="hover:underline">
+                    Artikel
                   </a>
                 </li>
                 <li className="mb-4">
@@ -80,7 +80,7 @@ const Footer = () => {
               <ul className="font-medium text-gray-300/90">
                 <li className="mb-4">
                   <a
-                    href="https://www.morfo.rest/"
+                    href="https://www.instagram.com/rynldysllino"
                     className=" hover:underline"
                   >
                     Reynaldo <br /> Yusellino
@@ -88,7 +88,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <a
-                    href="https://www.detik.com/"
+                    href="https://www.instagram.com/ikhsan.nrd_"
                     className="hover:underline"
                   >
                     Muhammad <br /> ikhsanurridha
@@ -116,7 +116,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+        <hr className="my-6 border-white sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-center text-sm text-gray-300/90">
             Dibuat oleh Tim Logic Lab

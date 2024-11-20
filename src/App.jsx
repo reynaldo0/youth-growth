@@ -25,9 +25,9 @@ function App() {
       <About />
       <Visi />
       <Program />
-      <Artikel />
       <EventsSection />
       <Calendar />
+      <Artikel />
       <Testimonial />
       <Footer />
     </>

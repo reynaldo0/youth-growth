@@ -6,28 +6,28 @@ const artikel = [
   {
     title: "Beasiswa: Gerbang Menuju Keunggulan Akademik",
     description:
-      "Dengan berbagai kesempatan beasiswa yang tersedia, generasi muda dapat mengejar pendidikan tinggi tanpa beban stres keuangan. Beasiswa tidak hanya mengurangi kekhawatiran finansial tetapi juga mengakui dan memberi penghargaan atas pencapaian akademik, membuka jalan baru untuk pertumbuhan pribadi dan profesional. Dengan mengajukan kesempatan ini, generasi muda",
+      "Dengan berbagai kesempatan beasiswa yang tersedia, generasi muda dapat mengejar pendidikan tinggi tanpa beban stres keuangan. Beasiswa tidak hanya mengurangi kekhawatiran finansial tetapi juga mengakui dan memberi penghargaan atas",
     date: "20-11-2024",
     image: "/article/1.png",
   },
   {
     title: "Membuka Peluang dengan Program Pemberdayaan Pemuda",
     description:
-      "Program pemberdayaan pemuda membuka jalan bagi generasi berikutnya untuk mengembangkan keterampilan penting, dari kepemimpinan hingga kesadaran sosial. Inisiatif ini tidak hanya memberikan sumber daya dan bimbingan tetapi juga menginspirasi generasi muda untuk mengendalikan masa depan mereka dan menjadi agen perubahan di komunitas mereka. Melalui lokakarya, sesi pelatihan, dan kolaborasi",
+      "Program pemberdayaan pemuda membuka jalan bagi generasi berikutnya untuk mengembangkan keterampilan penting, dari kepemimpinan hingga kesadaran sosial. Inisiatif ini tidak hanya memberikan sumber ",
     date: "20-10-2024",
     image: "/article/2.png",
   },
   {
     title: "Keterlibatan Komunitas: Membangun Koneksi yang Lebih Kuat",
     description:
-      "Terlibat dalam kegiatan komunitas tidak hanya menumbuhkan rasa memiliki tetapi juga meningkatkan kolaborasi di antara pemuda. Dengan menjadi relawan dan berpartisipasi dalam proyek lokal, generasi muda dapat memperkuat ikatan sosial mereka dan mengembangkan pemahaman yang lebih dalam tentang tantangan yang dihadapi oleh komunitas mereka. Keterlibatan aktif ini mempromosikan empati, kerja sama, dan kepemimpinan",
+      "Terlibat dalam kegiatan komunitas tidak hanya menumbuhkan rasa memiliki tetapi juga meningkatkan kolaborasi di antara pemuda. Dengan menjadi relawan dan berpartisipasi dalam proyek lokal, generasi ",
     date: "15-10-2024",
     image: "/article/3.png",
   },
   {
     title: "Bagaimana Magang Dapat Membentuk Jalur Karir Anda",
     description:
-      "Magang memberikan pengalaman praktis yang sangat berharga, membantu individu muda menghubungkan pengetahuan akademik dengan aplikasi dunia nyata. Dengan mengikuti magang, pemuda dapat membangun jaringan profesional, mempelajari keterampilan di tempat kerja, dan mendapatkan pemahaman yang lebih jelas tentang tujuan karir mereka. Pengalaman praktis ini tidak hanya meningkatkan resume mereka tetapi juga mempersiapkan",
+      "Magang memberikan pengalaman praktis yang sangat berharga, membantu individu muda menghubungkan pengetahuan akademik dengan aplikasi dunia nyata. Dengan mengikuti magang, pemuda dapat membangun jaringan profesional ",
     date: "29-09-2024",
     image: "/article/4.png",
   },
@@ -37,20 +37,20 @@ const Artikel = () => {
   // Fungsi untuk menampilkan toast saat tombol "Baca Selengkapnya" diklik
   const alertClick = () => {
     // Tampilkan toast info ketika tombol diklik
-    toast.info("Pendaftaran belum dibuka untuk acara ini!", {
+    toast.error("Artikel Tidak Ditemukan", {
       position: "top-center",
       autoClose: 3000,
-      style: { backgroundColor: "#ffcc00", color: "#000" },
+      style: { backgroundColor: "#ffff", color: "#000" },
     });
   };
 
   return (
-    <section className="py-24">
+    <section className="py-16" id="article">
       <ToastContainer className="z-[9999] fixed" />
       <div className="px-4 relative md:px-10 lg:px-20 py-8">
         <h2 className="text-3xl font-bold mb-6">Artikel</h2>
         <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
-          <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+          <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600" onClick={alertClick}>
             Lihat Artikel Lainnya
           </button>
         </div>

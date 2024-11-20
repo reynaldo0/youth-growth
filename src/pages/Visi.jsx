@@ -16,7 +16,7 @@ const VisionSection = () => {
         data-aos="fade-up"
         data-aos-duration="800"
       >
-        Visi dan Misi
+        Misi
       </h2>
       <div className="flex flex-wrap justify-center items-center space-y-8 md:space-y-0 mx-7">
         {/* Right Section - 3 Static Cards */}

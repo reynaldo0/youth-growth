@@ -180,14 +180,15 @@ const EventsSection = () => {
   }, []);
 
   return (
-    <section className="py-16 md:py-24" id="agenda">
-      <h2
-        className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4"
-        data-aos={isMobile ? "fade-up" : "fade-right"}
-        data-aos-duration="800"
-      >
-        Agenda
-      </h2>
+    <section className="py-16 md:py-20" id="agenda">
+      <div className="px-4 relative md:px-10 lg:px-20 py-5">
+      <h2 className="text-3xl font-bold mb-6 mx-auto container px-5">Agenda</h2>
+      <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
+          <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+            Lihat Agenda Lainnya
+          </button>
+        </div>
+      </div>
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid gap-8 md:grid-cols-3">
           {events.map((event, index) => (

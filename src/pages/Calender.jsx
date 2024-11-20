@@ -1,5 +1,6 @@
 import { Bookmark } from "lucide-react"; // Import Bookmark icon from Lucide React
 import React, { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const CalendarSection = () => {
   const events = [
@@ -80,9 +81,19 @@ const CalendarSection = () => {
     };
   }, []);
 
+  const alertClick = () => {
+    // Tampilkan toast info ketika tombol diklik
+    toast.error("Agenda Tidak Ditemukan", {
+      position: "top-center",
+      autoClose: 3000,
+      style: { backgroundColor: "#ffff", color: "#000" },
+    });
+  };
+
   return (
     
-    <section className="bg-white py-24" id="calender">
+    <section className="bg-white py-12" id="calender">
+      <ToastContainer className="z-[9999] fixed" />
       <h2
         className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4"
         data-aos={isMobile ? "fade-up" : "fade-right"}
@@ -163,7 +174,7 @@ const CalendarSection = () => {
 
           {/* Yang Akan Datang */}
           <div className="col-span-2">
-            <div className="text-white rounded-lg p-4 h-full flex flex-col">
+            <div className="text-white rounded-lg  h-full flex flex-col">
               <div className="flex justify-between items-center mb-4">
                 <h3
                   className="text-red-500 font-bold text-xl"
@@ -175,7 +186,7 @@ const CalendarSection = () => {
                 <button
                   className="text-white font-medium bg-red-500 px-2 md:px-5 py-2 rounded-full text-sm"
                   data-aos={isMobile ? "fade-up" : "fade-right"}
-                  data-aos-duration="800"
+                  data-aos-duration="800" onClick={alertClick}
                 >
                   Lihat Agenda Lainnya
                 </button>

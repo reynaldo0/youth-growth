@@ -1,4 +1,5 @@
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const programs = [
   {
@@ -23,8 +24,17 @@ const programs = [
 ];
 
 const Program = () => {
+  const alertClick = () => {
+    // Tampilkan toast info ketika tombol diklik
+    toast.error("Program Dalam Tahap Perkembangan", {
+      position: "top-center",
+      autoClose: 3000,
+      style: { backgroundColor: "#ffff", color: "#000" },
+    });
+  };
   return (
     <section className="container py-24 mx-auto">
+      <ToastContainer className="z-[9999] fixed" />
       <div className="flex flex-col items-center space-y-8">
         <h2
           className="text-3xl md:text-4xl md:font-bold font-semibold"
@@ -49,12 +59,18 @@ const Program = () => {
               />
 
               {/* Hidden text, shown on hover */}
-              <p className="text-xl md:text-3xl font-bold text-red-500 opacity-0 group-hover:opacity-100 absolute -top-[55px] md:-top-20 text-center transition-all duration-300 transform scale-90 group-hover:scale-100 group-hover:translate-y-0">
+              <p className="text-xl md:text-3xl font-bold text-[#F92020] opacity-0 group-hover:opacity-100 absolute -top-[55px] md:-top-20 text-center transition-all duration-300 transform scale-90 group-hover:scale-100 group-hover:translate-y-0">
                 {program.label}
               </p>
             </div>
           ))}
         </div>
+      </div>
+      <div className="relative" onClick={alertClick}>
+        <p className="absolute bottom-10 right-4 text-2xl font-semibold cursor-pointer text-[#F92020] group" >
+          Selengkapnya <br /> Tentang Program
+          <span className="block w-0 group-hover:w-full h-[2px] bg-[#F92020] transition-all duration-500"></span>
+        </p>
       </div>
     </section>
   );
