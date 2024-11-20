@@ -14,7 +14,7 @@ const Program = () => {
   return (
     <section className="container py-24 mx-auto">
       <div className="flex flex-col items-center space-y-8">
-        <h2 className="text-3xl font-semibold">Program</h2>
+        <h2 className="text-3xl md:text-4xl md:font-bold font-semibold">Program</h2>
         
         <div className="grid grid-cols-2 pt-10 md:grid-cols-4 gap-x-20 gap-y-16 md:gap-x-56 md:gap-y-20 text-center">
           {programs.map((program, index) => (

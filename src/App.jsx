@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import ToTopButton from "./components/ToUp";
 import About from "./pages/About";
 import Artikel from "./pages/Article";
 import Calendar from "./pages/Calender";
@@ -13,9 +14,10 @@ import "aos/dist/aos.css";
 
 function App() {
   AOS.init();
-  
+
   return (
     <>
+      <ToTopButton />
       <Navbar />
       <Home />
       <About />

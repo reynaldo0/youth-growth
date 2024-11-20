@@ -54,7 +54,7 @@ const About = () => {
       <div className="flex flex-col items-center text-center space-y-4 w-full md:w-[130%]">
         <div
           ref={canvasRef}
-          className="w-full h-[200px] scale-125 md:scale-100 mr-40 md:mr-0 md:h-[500px]"
+          className="w-full h-[200px] scale-125 md:scale-100 mr-32 md:mr-0 md:h-[500px]"
         >
           <Canvas
             className="md:pt-24"
@@ -72,9 +72,9 @@ const About = () => {
             />
             <Garuda scale={scale} /> {/* Apply dynamic scale */}
             <OrbitControls
-              enableZoom={!isMobile} // Disable zoom on mobile
+              enableZoom={false} // Disable zoom on mobile
               enableRotate={!isMobile} // Disable rotation on mobile
-              enablePan={!isMobile} // Disable panning on mobile
+              enablePan={false} // Disable panning on mobile
             />
           </Canvas>
         </div>
