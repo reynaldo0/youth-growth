@@ -86,7 +86,7 @@ const Home = ({ height = "80vh" }) => {
         ))}
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Content centered both vertically and horizontally */}
         <div
