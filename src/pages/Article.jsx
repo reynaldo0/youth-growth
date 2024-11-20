@@ -68,8 +68,6 @@ const Artikel = () => {
                   : "bg-white hover:-translate-y-2 hover:translate-x-2 hover:border-[#F92020]"
               }`}
               style={{ height: expandedIndex === index ? "auto" : "450px" }}
-              data-aos="fade-up"
-              data-aos-duration={`${800 + index * 300}`}
             >
               <img
                 src={article.image}
@@ -78,7 +76,7 @@ const Artikel = () => {
               />
               <div className="p-4">
                 <h3 className="font-semibold text-lg mb-2">{article.title}</h3>
-                <p className="text-md text-gray-600 mb-2 text-justify">
+                <p className="text-sm text-gray-600 mb-2 text-justify">
                   {expandedIndex === index
                     ? article.description // Tampilkan seluruh deskripsi jika aktif
                     : `${article.description.slice(0, 100)}...`}{" "}

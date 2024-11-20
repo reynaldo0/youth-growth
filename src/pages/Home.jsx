@@ -4,7 +4,7 @@ import Typed from "typed.js";
 const Home = ({ height = "80vh" }) => {
   const typedElement = useRef(null);
 
-  const growthTexts = ["Growth", "Innovation", "Empowerment", "Opportunity"];
+  const growthTexts = ["Growth", "Always Learn", "Stay Connected", "Be Empowered"];
 
   // State to keep track of current and previous background indices
   const [bgImageIndex, setBgImageIndex] = useState(0);
