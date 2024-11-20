@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Bookmark, Heart } from "lucide-react";
 
 const articles = [
@@ -33,6 +33,12 @@ const articles = [
 ];
 
 const Artikel = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
     <section className="py-16 md:py-24" id="article">
       <div className="px-4 relative md:px-10 lg:px-20 py-8">
@@ -46,7 +52,12 @@ const Artikel = () => {
           {articles.map((article, index) => (
             <div
               key={index}
-              className="bg-white transition-all duration-300 transform hover:-translate-y-2 hover:translate-x-2 border-l-4 border-b-4 border-r border-t border-transparent hover:border-[#F92020] shadow-md rounded-lg overflow-hidden hover:shadow-lg"
+              className={`transition-all duration-300 transform border-l-4 border-b-4 border-r border-t rounded-lg overflow-hidden shadow-md ${
+                expandedIndex === index
+                  ? "bg-gray-100 border-red-500"
+                  : "bg-white hover:-translate-y-2 hover:translate-x-2 hover:border-[#F92020]"
+              }`}
+              style={{ height: expandedIndex === index ? "auto" : "450px" }} // Tetapkan tinggi tetap saat tidak aktif
             >
               <img
                 src={article.image}
@@ -55,9 +66,16 @@ const Artikel = () => {
               />
               <div className="p-4">
                 <h3 className="font-semibold text-lg mb-2">{article.title}</h3>
-                <p className="text-xs text-gray-600 mb-2 text-justify">
-                  {article.description}{" "}
-                  <span className="text-red-500 cursor-pointer">Baca Selengkapnya</span>
+                <p className="text-md text-gray-600 mb-2 text-justify">
+                  {expandedIndex === index
+                    ? article.description // Tampilkan seluruh deskripsi jika aktif
+                    : `${article.description.slice(0, 100)}...`}{" "}
+                  <span
+                    className="text-red-500 cursor-pointer"
+                    onClick={() => toggleExpand(index)}
+                  >
+                    {expandedIndex === index ? "Sembunyikan" : "Baca Selengkapnya"}
+                  </span>
                 </p>
                 <div className="text-gray-500 text-xs flex justify-between items-center">
                   <span>{article.date}</span>

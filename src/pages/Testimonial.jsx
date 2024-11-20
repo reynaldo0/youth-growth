@@ -75,8 +75,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-white" id="testimoni">
-      <div className="container mx-auto">
+    <section className="py-24 bg-white container mx-auto" id="testimoni">
+      <div className="mx-5 md:mx-0">
         <h2 className="text-3xl font-bold text-center md:text-start mb-8">Testimoni</h2>
         <Swiper
           onSlideChange={handleSlideChange} // Update active index on slide change

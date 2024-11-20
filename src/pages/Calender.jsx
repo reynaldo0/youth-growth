@@ -63,9 +63,9 @@ const CalendarSection = () => {
       </h2>
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 items-start">
           {/* Kalender */}
-          <div className="col-span-1">
+          <div className="col-span-1 mx-5">
             <div className="border rounded-lg p-4 h-full">
               <h3 className="text-lg font-bold mb-2">November 2024</h3>
               <div className="grid grid-cols-7 gap-2 text-center">
