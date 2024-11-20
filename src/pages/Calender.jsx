@@ -1,5 +1,5 @@
-import React from "react";
 import { Bookmark } from "lucide-react"; // Import Bookmark icon from Lucide React
+import React, { useEffect, useState } from "react";
 
 const CalendarSection = () => {
   const events = [
@@ -56,11 +56,36 @@ const CalendarSection = () => {
   const highlightDatesRed = [3, 10, 17, 24, 31]; // Highlight these dates with red
   const highlightDatesGreen = [1, 8, 15, 22, 29]; // Highlight these dates with green
 
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const checkScreenSize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    // Cek ukuran layar saat pertama kali
+    checkScreenSize();
+
+    // Tambahkan event listener untuk memantau perubahan ukuran layar
+    window.addEventListener("resize", checkScreenSize);
+
+    // Hapus event listener saat komponen dilepas
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   return (
+    
     <section className="bg-white py-24" id="calender">
       <h2
         className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4"
-        data-aos="fade-right"
+        data-aos={isMobile ? "fade-up" : "fade-right"}
         data-aos-duration="800"
       >
         Kalender
@@ -71,7 +96,7 @@ const CalendarSection = () => {
           {/* Kalender */}
           <div
             className="col-span-1 mx-5"
-            data-aos="fade-right"
+            data-aos={isMobile ? "fade-up" : "fade-right"}
             data-aos-duration="1000"
           >
             <div className="border rounded-lg p-4 h-full">
@@ -142,14 +167,14 @@ const CalendarSection = () => {
               <div className="flex justify-between items-center mb-4">
                 <h3
                   className="text-red-500 font-bold text-xl"
-                  data-aos="fade-right"
+                  data-aos={isMobile ? "fade-up" : "fade-right"}
                   data-aos-duration="800"
                 >
                   Yang akan datang
                 </h3>
                 <button
                   className="text-white font-medium bg-red-500 px-2 md:px-5 py-2 rounded-full text-sm"
-                  data-aos="fade-left"
+                  data-aos={isMobile ? "fade-up" : "fade-right"}
                   data-aos-duration="800"
                 >
                   Lihat Agenda Lainnya

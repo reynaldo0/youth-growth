@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 const events = [
@@ -155,11 +155,35 @@ const EventsSection = () => {
     setSelectedEvent(null);
   };
 
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const checkScreenSize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    // Cek ukuran layar saat pertama kali
+    checkScreenSize();
+
+    // Tambahkan event listener untuk memantau perubahan ukuran layar
+    window.addEventListener("resize", checkScreenSize);
+
+    // Hapus event listener saat komponen dilepas
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   return (
     <section className="py-16 md:py-24" id="agenda">
       <h2
         className="text-white md:pl-20 py-2 rounded-r-full bg-red-500 inline-block px-5 md:px-10 font-serif text-2xl md:text-4xl mb-4"
-        data-aos="fade-right"
+        data-aos={isMobile ? "fade-up" : "fade-right"}
         data-aos-duration="800"
       >
         Agenda

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import "aos/dist/aos.css";
 import { Bookmark, Heart } from "lucide-react";
+import React, { useEffect, useState } from "react";
 
 const articles = [
   {
@@ -34,27 +35,44 @@ const articles = [
 
 const Artikel = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleExpand = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
+
+  const checkScreenSize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    // Cek ukuran layar saat pertama kali
+    checkScreenSize();
+
+    // Tambahkan event listener untuk memantau perubahan ukuran layar
+    window.addEventListener("resize", checkScreenSize);
+
+    // Hapus event listener saat komponen dilepas
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   return (
     <section className="py-16 md:py-24" id="article">
       <div className="px-4 relative md:px-10 lg:px-20 py-8">
         <h2
           className="text-3xl text-red-500 font-bold mb-6"
-          data-aos="fade-right"
+          data-aos={isMobile ? "fade-up" : "fade-right"}
           data-aos-duration="800"
         >
           Artikel
         </h2>
-        <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
-          <button
-            className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
-            data-aos="fade-left"
-            data-aos-duration="800"
-          >
+        <div
+          className="flex absolute top-8 right-5 md:right-20 justify-end mb-4"
+          data-aos={isMobile ? "fade-up" : "fade-left"}
+        >
+          <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
             Lihat Artikel Lainnya
           </button>
         </div>
