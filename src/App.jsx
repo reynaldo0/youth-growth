@@ -8,20 +8,24 @@ import Home from "./pages/Home";
 import Program from "./pages/Program";
 import Testimonial from "./pages/Testimonial";
 import Visi from "./pages/Visi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  AOS.init();
+  
   return (
     <>
       <Navbar />
       <Home />
-      <About/>
-      <Visi/>
-      <Program/>
-      <Artikel/>
-      <EventsSection/>
-      <Calendar/>
-      <Testimonial/>
-      <Footer/>
+      <About />
+      <Visi />
+      <Program />
+      <Artikel />
+      <EventsSection />
+      <Calendar />
+      <Testimonial />
+      <Footer />
     </>
   );
 }
