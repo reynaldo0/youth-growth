@@ -93,8 +93,12 @@ const Home = ({ height = "80vh" }) => {
           className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-5 md:ml-12"
           style={{ height: "100%" }}
         >
-          <h1 className="text-4xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide">
-            <span className="text-[#F92020]">Youth </span>{" "}
+          <h1
+            className="text-4xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            <span className="text-[#F92020]"> Youth </span>{" "}
             <br className="md:hidden" />
             <span
               className={`transition-all duration-700 pb-2 ease-in-out transform ${
@@ -120,11 +124,15 @@ const Home = ({ height = "80vh" }) => {
             </span>
           </h1>
 
-          <p className="text-2xl md:text-4xl mb-16 font-montserrat md:pb-3 pt-3">
+          <p
+            className="text-2xl md:text-4xl mb-16 font-montserrat md:pb-3 pt-3"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             Menuju <span ref={typedElement}></span> Emas 2024
           </p>
 
-          <a href="#about">
+          <a href="#about" data-aos="fade-up" data-aos-duration="1100">
             <button className="border-2 border-white bg-[#F92020] text-white text-xl sm:text-2xl px-8 sm:px-12 py-2 rounded-full font-mono hover:bg-[#F92020]/90">
               Jelajahi
             </button>

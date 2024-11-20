@@ -42,9 +42,19 @@ const Artikel = () => {
   return (
     <section className="py-16 md:py-24" id="article">
       <div className="px-4 relative md:px-10 lg:px-20 py-8">
-        <h2 className="text-3xl text-red-500 font-bold mb-6">Artikel</h2>
+        <h2
+          className="text-3xl text-red-500 font-bold mb-6"
+          data-aos="fade-right"
+          data-aos-duration="800"
+        >
+          Artikel
+        </h2>
         <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
-          <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
+            data-aos="fade-left"
+            data-aos-duration="800"
+          >
             Lihat Artikel Lainnya
           </button>
         </div>
@@ -58,6 +68,8 @@ const Artikel = () => {
                   : "bg-white hover:-translate-y-2 hover:translate-x-2 hover:border-[#F92020]"
               }`}
               style={{ height: expandedIndex === index ? "auto" : "450px" }} // Tetapkan tinggi tetap saat tidak aktif
+              data-aos="fade-up"
+              data-aos-duration={`${800 + index * 300}`}
             >
               <img
                 src={article.image}
@@ -74,7 +86,9 @@ const Artikel = () => {
                     className="text-red-500 cursor-pointer"
                     onClick={() => toggleExpand(index)}
                   >
-                    {expandedIndex === index ? "Sembunyikan" : "Baca Selengkapnya"}
+                    {expandedIndex === index
+                      ? "Sembunyikan"
+                      : "Baca Selengkapnya"}
                   </span>
                 </p>
                 <div className="text-gray-500 text-xs flex justify-between items-center">

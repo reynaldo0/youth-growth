@@ -37,12 +37,24 @@ const About = () => {
     >
       {/* Left Section */}
       <div className="bg-red-600 text-white p-6 md:p-12 rounded-b-[20px] md:rounded-r-[40px] flex flex-col items-start space-y-4 md:space-y-6">
-        <h2 className="text-xl md:text-5xl font-serif leading-tight text-left">
+        <h2
+          className="text-xl md:text-5xl font-serif leading-tight text-left"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           Kami membawa visi untuk menjadi gerakan utama dalam mempersiapkan
           generasi muda menuju Indonesia emas 2045.
         </h2>
-        <hr className="border border-white w-1/2 md:w-1/4 my-4 md:my-6" />
-        <p className="text-sm md:text-2xl font-light text-left">
+        <hr
+          className="border border-white w-1/2 md:w-1/4 my-4 md:my-6"
+          data-aos="fade-up"
+          data-aos-duration="9000"
+        />
+        <p
+          className="text-sm md:text-2xl font-light text-left"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           Generasi muda merupakan fondasi untuk masa depan yang lebih baik.
           Mereka akan menjadi sumber daya terpenting dalam menghadapi tantangan
           global dan berperan aktif dalam memajukan berbagai sektor dan
