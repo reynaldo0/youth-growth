@@ -199,7 +199,13 @@ const CalendarSection = () => {
                       </div>
                       {/* Align the bookmark icon vertically */}
                       <div className="flex justify-center items-center">
-                        <Bookmark className="w-6 h-6 text-white hover:text-gray-200" />
+                      <img
+                        src="/icon/book.svg" // Replace with your SVG URL
+                        alt="Bookmark"
+                        className="svg-icon hover:filter hover:hue-rotate-[90deg] hover:brightness-0 hover:saturate-100"
+                        width={24}
+                        height={24}
+                      />
                       </div>
                     </div>
                   ))}
@@ -223,7 +229,13 @@ const CalendarSection = () => {
                       </div>
                       {/* Align the bookmark icon vertically */}
                       <div className="flex justify-center items-center">
-                        <Bookmark className="w-6 h-6 text-white hover:text-gray-200" />
+                      <img
+                        src="/icon/book.svg" // Replace with your SVG URL
+                        alt="Bookmark"
+                        className="svg-icon hover:filter hover:hue-rotate-[90deg] hover:brightness-0 hover:saturate-100"
+                        width={24}
+                        height={24}
+                      />
                       </div>
                     </div>
                   ))}

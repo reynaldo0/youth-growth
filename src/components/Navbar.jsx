@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="fixed left-0 top-0 z-[99999] md:px-10 w-full border-white shadow-sm bg-white backdrop-blur-md bg-opacity-80 border rounded-lg">
+      <nav className="fixed left-0 top-0 z-[9999] md:px-10 w-full border-white shadow-sm bg-white backdrop-blur-md bg-opacity-80 border rounded-lg">
         <div className="container mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4">
           <a
             href="#"

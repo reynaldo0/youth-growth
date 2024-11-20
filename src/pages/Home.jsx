@@ -4,9 +4,13 @@ import Typed from "typed.js";
 const Home = ({ height = "80vh" }) => {
   const typedElement = useRef(null);
 
-  const growthTexts = ["Growth", "Always Learn", "Stay Connected", "Be Empowered"];
+  const growthTexts = [
+    "Youth Growth",
+    "Always Learn",
+    "Stay Connected",
+    "Be Empowered",
+  ];
 
-  // State to keep track of current and previous background indices
   const [bgImageIndex, setBgImageIndex] = useState(0);
   const [prevBgImageIndex, setPrevBgImageIndex] = useState(null);
   const [growthText, setGrowthText] = useState(growthTexts[0]);
@@ -33,7 +37,6 @@ const Home = ({ height = "80vh" }) => {
       setBgImageIndex((prevIndex) => (prevIndex + 1) % 4);
       setTextAnimating(true);
 
-      // Update `growthText` after a short delay for smoother transition
       setTimeout(() => {
         setGrowthText(growthTexts[(bgImageIndex + 1) % growthTexts.length]);
         setTextAnimating(false);
@@ -44,13 +47,11 @@ const Home = ({ height = "80vh" }) => {
   }, [bgImageIndex]);
 
   const handlePaginationClick = (index) => {
-    // Only trigger animation if the clicked index is different from the current bgImageIndex
     if (index !== bgImageIndex) {
       setPrevBgImageIndex(bgImageIndex);
       setBgImageIndex(index);
       setTextAnimating(true);
 
-      // Use a delay to transition the growthText smoothly
       setTimeout(() => {
         setGrowthText(growthTexts[index]);
         setTextAnimating(false);
@@ -59,7 +60,7 @@ const Home = ({ height = "80vh" }) => {
   };
 
   return (
-    <div className="md:mx-12 md:pt-16 sm:min-h-screen">
+    <div className="md:mx-12 mt-20 md:mt-0 md:pt-16 sm:min-h-screen pb-[55px] md:pb-0">
       <div
         className="relative overflow-hidden md:rounded-b-3xl"
         style={{ height: height }}
@@ -74,13 +75,12 @@ const Home = ({ height = "80vh" }) => {
                 : index === prevBgImageIndex
                 ? "-translate-x-full opacity-0"
                 : "translate-x-full opacity-0"
-            }`}
+            } w-screen h-screen`}
             style={{
               backgroundImage: `url('/background/bg${index + 1}.png')`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              height: "100%",
             }}
           />
         ))}
@@ -94,12 +94,10 @@ const Home = ({ height = "80vh" }) => {
           style={{ height: "100%" }}
         >
           <h1
-            className="text-4xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide"
+            className="text-6xl md:text-7xl font-black mb-1 text-stroke-md md:text-stroke-lg font-sans tracking-wide"
             data-aos="fade-up"
             data-aos-duration="800"
           >
-            <span className="text-[#F92020]"> Youth </span>{" "}
-            <br className="md:hidden" />
             <span
               className={`transition-all duration-700 pb-2 ease-in-out transform ${
                 textAnimating
@@ -110,17 +108,14 @@ const Home = ({ height = "80vh" }) => {
                 display: "inline-block",
               }}
             >
-              <span
-                className={
-                  growthText === "Growth" ? "text-black" : "text-white"
-                }
-                style={{
-                  WebkitTextStroke:
-                    growthText === "Growth" ? "1px white" : undefined,
-                }}
-              >
-                {growthText}
-              </span>
+              {growthText.split(" ").map((word, index) => (
+                <span
+                  key={index}
+                  className={word === "Youth" ? "text-[#F92020]" : "text-white"}
+                >
+                  {word}{" "}
+                </span>
+              ))}
             </span>
           </h1>
 
@@ -133,7 +128,7 @@ const Home = ({ height = "80vh" }) => {
           </p>
 
           <a href="#about" data-aos="fade-up" data-aos-duration="1100">
-            <button className="border-2 border-white bg-[#F92020] text-white text-xl sm:text-2xl px-8 sm:px-12 py-2 rounded-full font-mono hover:bg-[#F92020]/90">
+            <button className="border-2 border-white bg-[#F92020]/80 text-white text-xl sm:text-2xl px-8 sm:px-12 py-2 rounded-full font-medium hover:bg-[#F92020]/70 scale-150 md:scale-100">
               Jelajahi
             </button>
           </a>
@@ -141,7 +136,7 @@ const Home = ({ height = "80vh" }) => {
       </div>
 
       {/* Pagination Buttons */}
-      <div className="absolute hidden pt-5 left-1/2 z-50 transform -translate-x-1/2 md:flex space-x-4 scale-125">
+      <div className="absolute pt-4 left-1/2 z-50 transform -translate-x-1/2 md:flex space-x-4 scale-125">
         {[0, 1, 2, 3].map((index) => (
           <button
             key={index}

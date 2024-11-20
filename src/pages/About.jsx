@@ -32,7 +32,7 @@ const About = () => {
 
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-center md:py-24 space-y-8 md:space-y-0 md:space-x-8 bg-red-600 md:bg-transparent"
+      className="flex pt-16 flex-col md:pt-7 md:flex-row items-center justify-center md:py-24 space-y-8 md:space-y-0 md:space-x-8 bg-red-600 md:bg-transparent"
       id="about"
     >
       {/* Left Section */}
