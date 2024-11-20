@@ -116,7 +116,7 @@ const Home = ({ height = "80vh" }) => {
                 }
                 style={{
                   WebkitTextStroke:
-                    growthText === "Growth" ? "2px white" : undefined,
+                    growthText === "Growth" ? "1px white" : undefined,
                 }}
               >
                 {growthText}
