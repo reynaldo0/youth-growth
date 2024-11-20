@@ -80,7 +80,7 @@ const CalendarSection = () => {
 
                 {/* Starting from the 28th */}
                 {[...Array(4).keys()].map((day, index) => (
-                  <div key={index} className="text-gray-400">
+                  <div key={index} className="text-gray-400 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex">
                     {startDate + day}
                   </div>
                 ))}
@@ -91,10 +91,10 @@ const CalendarSection = () => {
                     key={index + 4}
                     className={`${
                       highlightDatesRed.includes(day + 1)
-                        ? "text-red-500"
+                        ? "text-red-500 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex"
                         : highlightDatesGreen.includes(day + 1)
-                        ? "text-green-500"
-                        : "text-gray-800"
+                        ? "text-green-500 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex"
+                        : "text-gray-800 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex"
                     }`}
                   >
                     {day + 1}
@@ -102,7 +102,7 @@ const CalendarSection = () => {
                 ))}
 
                 {/* Style the 19th date with red background */}
-                <div className="bg-[#A1A1A1] text-white rounded-full w-8 h-8 flex items-center justify-center">
+                <div className="bg-[#A1A1A1] text-white rounded-full w-8 h-8 flex items-center justify-center hover:text-white hover:bg-red-500">
                   19
                 </div>
 
@@ -112,10 +112,10 @@ const CalendarSection = () => {
                     key={index + 19}
                     className={`${
                       highlightDatesRed.includes(day + 20)
-                        ? "text-red-500"
+                        ? "text-red-500 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex"
                         : highlightDatesGreen.includes(day + 20)
-                        ? "text-green-500"
-                        : "text-gray-800"
+                        ? "text-green-500 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex"
+                        : "text-gray-800 hover:text-white hover:bg-red-500 rounded-full w-8 h-8 items-center justify-center flex"
                     }`}
                   >
                     {day + 20}
