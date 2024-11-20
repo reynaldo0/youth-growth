@@ -29,10 +29,10 @@ const Footer = () => {
                   <Mail className="w-5 h-5 text-gray-300/90" />{" "}
                   {/* Using Mail icon */}
                   <a
-                    href="mailto:futuron@gmail.com?subject=Hallo Futuron! Saya ingin mengajak anda untuk berkolaborasi..."
+                    href="mailto:youthgrowth@gmail.com?subject=Hallo Youth Growth! Saya ingin mengajak anda untuk berkolaborasi untuk mewujudkan Indonesia Emas 2024..."
                     className="hover:underline"
                   >
-                    futuron@gmail.com
+                    youthgrowth@gmail.com
                   </a>
                 </li>
               </ul>
@@ -46,28 +46,28 @@ const Footer = () => {
               </h2>
               <ul className="font-medium text-gray-300/90">
                 <li className="mb-4">
-                  <a href="/" className="hover:underline">
+                  <a href="#" className="hover:underline">
                     Beranda
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/about" className="hover:underline">
+                  <a href="#about" className="hover:underline">
                     Tentang
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/detail" className="hover:underline">
-                    Detail
+                  <a href="#article" className="hover:underline">
+                    Artikel
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/comunity" className="hover:underline">
-                    Komunitas
+                  <a href="#agenda" className="hover:underline">
+                    Agenda
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="/data" className="hover:underline">
-                    Data
+                  <a href="#testimoni" className="hover:underline">
+                    Testimoni
                   </a>
                 </li>
               </ul>
@@ -75,47 +75,23 @@ const Footer = () => {
 
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-                Sumber Data
+                Tim Kami
               </h2>
               <ul className="font-medium text-gray-300/90">
                 <li className="mb-4">
                   <a
                     href="https://www.morfo.rest/"
-                    className="lowercase hover:underline"
+                    className=" hover:underline"
                   >
-                    Mofro.rest
+                    Reynaldo <br /> Yusellino
                   </a>
                 </li>
                 <li className="mb-4">
                   <a
                     href="https://www.detik.com/"
-                    className="lowercase hover:underline"
+                    className="hover:underline"
                   >
-                    detik.com
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://www.wikipedia.org/"
-                    className="lowercase hover:underline"
-                  >
-                    Wikipedia.org
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://www.clearwatercf.com/"
-                    className="lowercase hover:underline"
-                  >
-                    ClearWatercf.com
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://emerhub.com/"
-                    className="lowercase hover:underline"
-                  >
-                    Emerhub.com
+                    Muhammad <br /> ikhsanurridha
                   </a>
                 </li>
               </ul>
@@ -134,38 +110,7 @@ const Footer = () => {
                     Pinterest
                   </a>
                 </li>
-                <li className="mb-4">
-                  <a
-                    href="https://www.morfo.rest/article/drones-reforest"
-                    className="hover:underline"
-                  >
-                    Drone
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://www.exaputra.com/2024/03/chile-wind-energy.html"
-                    className="hover:underline"
-                  >
-                    Energy Angin
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://emerhub.com/indonesia/how-to-open-an-electric-vehicle-charging-station-in-indonesia/"
-                    className="hover:underline"
-                  >
-                    Mobil Listrik
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://www.linkedin.com/pulse/eliminasi-sampah-plastik-demi-lingkungan-yang-/"
-                    className="hover:underline"
-                  >
-                    Sampah Plastik
-                  </a>
-                </li>
+                
               </ul>
             </div>
           </div>
@@ -174,7 +119,7 @@ const Footer = () => {
         <hr className="my-6 border-gray-700 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-center text-sm text-gray-300/90">
-            Dibuat oleh Reynaldo Yusellino
+            Dibuat oleh Tim Logic Lab
           </span>
         </div>
       </div>
