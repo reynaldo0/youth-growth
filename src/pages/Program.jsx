@@ -66,7 +66,8 @@ const Program = () => {
           ))}
         </div>
       </div>
-      <div className="relative" onClick={alertClick}>
+      <div className="relative" onClick={alertClick} data-aos="fade-up"
+          data-aos-duration="1200">
         <p className="absolute bottom-10 right-4 text-2xl font-semibold cursor-pointer text-[#F92020] group" >
           Selengkapnya <br /> Tentang Program
           <span className="block w-0 group-hover:w-full h-[2px] bg-[#F92020] transition-all duration-500"></span>

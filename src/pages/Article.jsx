@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify"; // Import toastify
 import "react-toastify/dist/ReactToastify.css"; // Import gaya untuk toastify
 
@@ -44,17 +44,56 @@ const Artikel = () => {
     });
   };
 
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const checkScreenSize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    // Cek ukuran layar saat pertama kali
+    checkScreenSize();
+
+    // Tambahkan event listener untuk memantau perubahan ukuran layar
+    window.addEventListener("resize", checkScreenSize);
+
+    // Hapus event listener saat komponen dilepas
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   return (
     <section className="py-16" id="article">
       <ToastContainer className="z-[9999] fixed" />
       <div className="px-4 relative md:px-10 lg:px-20 py-8">
-        <h2 className="text-3xl font-bold mb-6">Artikel</h2>
+        <h2
+          className="text-3xl font-bold mb-6"
+          data-aos={isMobile ? "fade-up" : "fade-right"}
+          data-aos-duration="1000"
+        >
+          Artikel
+        </h2>
         <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
-          <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600" onClick={alertClick}>
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
+            onClick={alertClick}
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-duration="1000"
+          >
             Lihat Artikel Lainnya
           </button>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+          data-aos="fade-up"
+          data-aos-duration="900"
+        >
           {artikel.map((art, index) => (
             <div
               key={index}

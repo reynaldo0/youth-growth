@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const events = [
   {
@@ -179,12 +180,32 @@ const EventsSection = () => {
     };
   }, []);
 
+  const alertClick = () => {
+    // Tampilkan toast info ketika tombol diklik
+    toast.error("Agenda Tidak Ditemukan", {
+      position: "top-center",
+      autoClose: 3000,
+      style: { backgroundColor: "#ffff", color: "#000" },
+    });
+  };
+
   return (
     <section className="py-16 md:py-20" id="agenda">
+      <ToastContainer className="z-[9999] fixed" />
       <div className="px-4 relative md:px-10 lg:px-20 py-5">
-      <h2 className="text-3xl font-bold mb-6 mx-auto container px-5">Agenda</h2>
-      <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
-          <button className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+        <h2
+          className="text-3xl font-bold md:mb-6 mx-auto container md:px-5"
+          data-aos={isMobile ? "fade-up" : "fade-right"}
+          data-aos-duration="1000"
+        >
+          Agenda
+        </h2>
+        <div className="flex absolute top-8 right-5 md:right-20 justify-end mb-4">
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
+            data-aos={isMobile ? "fade-up" : "fade-left"}
+            data-aos-duration="1000" onClick={alertClick}
+          >
             Lihat Agenda Lainnya
           </button>
         </div>

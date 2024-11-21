@@ -174,7 +174,7 @@ const CalendarSection = () => {
 
           {/* Yang Akan Datang */}
           <div className="col-span-2">
-            <div className="text-white rounded-lg  h-full flex flex-col">
+            <div className="text-white rounded-lg p-4 md:p-0 h-full flex flex-col">
               <div className="flex justify-between items-center mb-4">
                 <h3
                   className="text-red-500 font-bold text-xl"
@@ -185,7 +185,7 @@ const CalendarSection = () => {
                 </h3>
                 <button
                   className="text-white font-medium bg-red-500 px-2 md:px-5 py-2 rounded-full text-sm"
-                  data-aos={isMobile ? "fade-up" : "fade-right"}
+                  data-aos={isMobile ? "fade-up" : "fade-left"}
                   data-aos-duration="800" onClick={alertClick}
                 >
                   Lihat Agenda Lainnya
