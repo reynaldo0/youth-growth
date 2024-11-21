@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import { toast, ToastContainer } from "react-toastify";
 
 // Custom hook to detect mobile screen size
 const useIsMobile = () => {
@@ -53,6 +54,15 @@ const testimonials = [
   },
 ];
 
+const alertClick = () => {
+  // Tampilkan toast info ketika tombol diklik
+  toast.error("Testimoni Tidak Ditemukan", {
+    position: "top-center",
+    autoClose: 3000,
+    style: { backgroundColor: "#ffff", color: "#000" },
+  });
+};
+
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
@@ -76,6 +86,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-24 bg-white container mx-auto" id="testimoni">
+      <ToastContainer className="z-[9999] fixed" />
       <div className="mx-5 md:mx-0">
         <h2
           className="text-3xl font-bold text-center md:text-start mb-8"
@@ -143,10 +154,10 @@ const Testimonials = () => {
                   </p>
                 </div>
                 <a
-                  href="#"
-                  className="absolute bottom-5 right-7 text-red-500 text-sm font-bold underline mt-4 inline-block"
+                  className="absolute cursor-pointer bottom-5 right-7 text-red-500 text-sm font-bold underline mt-4 inline-block"
                   data-aos="fade-up"
                   data-aos-duration={`${800 + index * 300}`}
+                  onClick={alertClick}
                 >
                   Baca Lebih Lanjut
                 </a>
