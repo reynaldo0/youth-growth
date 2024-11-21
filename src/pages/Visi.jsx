@@ -20,14 +20,14 @@ const VisionSection = () => {
       </h2>
       <div className="flex flex-wrap justify-center items-center space-y-8 md:space-y-0 mx-7">
         {/* Right Section - 3 Static Cards */}
-        <div className="flex flex-wrap justify-center transition items-center space-y-6 md:space-y-0 md:space-x-8 w-full">
+        <div className="flex flex-wrap justify-center transition items-center space-y-6 md:space-y-0 md:space-x-8 w-full" data-aos="fade-up"
+              data-aos-duration="800">
           {visionSlides.map((slide, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-300 p-6 rounded-xl shadow-lg flex flex-col items-center w-full md:w-[30%] transition-all duration-300 transform hover:translate-x-2 hover:-translate-y-2 hover:border-[#F92020] hover:border-l-4 hover:border-b-4 hover:border-r hover:border-t"
+              className="bg-white border border-gray-300 p-6 rounded-xl shadow-lg flex flex-col items-center w-full md:w-[30%] transition-all duration-300 transform hover:translate-x-2 hover:-translate-y-2 md:hover:translate-x-4 md:hover:-translate-y-4 hover:border-[#F92020] hover:border-l-4 hover:border-b-4 hover:border-r hover:border-t"
               style={{ height: "auto" }}
-              data-aos="fade-up"
-              data-aos-duration={`${800 + index * 300}`}
+              
             >
               {/* Image with Fade-in Effect */}
               <img
