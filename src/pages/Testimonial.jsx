@@ -4,13 +4,14 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { toast, ToastContainer } from "react-toastify";
+import testimonials from "../docs/testimonial";
 
 // Custom hook to detect mobile screen size
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768); // Adjust as needed
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -19,43 +20,7 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-const testimonials = [
-  {
-    name: "Chika Dania",
-    title: "Pekerja Sosial",
-    organization: "Komunitas Peduli Lingkungan Jakarta",
-    testimonial:
-      "Melalui Youth-Growth, saya bisa bergabung dalam Community yang penuh inspirasi. Volunteer Program mereka memperkuat komitmen saya pada kerja sosial. Ini platform luar biasa untuk yang ingin membuat perubahan.",
-    image: "/testimoni/chika.png",
-  },
-  {
-    name: "Arya Baskoro",
-    title: "Asisten Manajer HRD",
-    organization: "TechnoCrops",
-    testimonial:
-      "Youth-Growth mempersiapkan saya menghadapi dunia kerja. Career Program dan informasi beasiswa sangat membantu saya berkembang. Komunitasnya pun penuh dengan orang-orang yang memotivasi. Platform ini sangat saya rekomendasikan!",
-    image: "/testimoni/arya.png",
-  },
-  {
-    name: "Nadia Ramadhani ",
-    title: "Mahasiswa Ilmu Komunikasi",
-    organization: "Universitas Gadjah Mada",
-    testimonial:
-      "Youth-Growth adalah sumber inspirasi bagi saya. Program Scholarship mempermudah saya menemukan beasiswa, dan Volunteer Program membuat saya lebih peka terhadap isu sosial. Platform ini benar-benar mendukung perkembangan anak muda.",
-    image: "/testimoni/nadia.png",
-  },
-  {
-    name: "Raka Mahendra",
-    title: "Fresh Graduate Teknik Mesin",
-    organization: "Institute Teknologi Bandung",
-    testimonial:
-      "Pelatihan di Youth-Growth sangat membantu! Workshop mereka memperkaya keterampilan teknis saya, dan Career Program membimbing saya dalam memulai karir. Saya sangat merekomendasikan Youth-Growth untuk pemuda yang ingin sukses.",
-    image: "/testimoni/raka.png",
-  },
-];
-
 const alertClick = () => {
-  // Tampilkan toast info ketika tombol diklik
   toast.error("Testimoni Tidak Ditemukan", {
     position: "top-center",
     autoClose: 3000,
@@ -68,17 +33,13 @@ const Testimonials = () => {
   const swiperRef = useRef(null);
   const isMobile = useIsMobile();
 
-  // Update active index when slide changes
   const handleSlideChange = (swiper) => {
-    // Use realIndex to ensure proper handling of looped slides
-    setActiveIndex(swiper.realIndex); // Use realIndex instead of activeIndex
+    setActiveIndex(swiper.realIndex);
   };
 
-  // Function to go to a specific slide
   const goToSlide = (index) => {
     if (swiperRef.current) {
-      // We are using slideTo method but correcting for loop behavior
-      const adjustedIndex = index % testimonials.length; // Ensure index wraps around correctly
+      const adjustedIndex = index % testimonials.length;
       swiperRef.current.slideTo(adjustedIndex);
       setActiveIndex(adjustedIndex);
     }
@@ -96,7 +57,7 @@ const Testimonials = () => {
           Testimoni
         </h2>
         <Swiper
-          onSlideChange={handleSlideChange} // Update active index on slide change
+          onSlideChange={handleSlideChange}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           spaceBetween={30}
           slidesPerView={isMobile ? 1 : 2}
