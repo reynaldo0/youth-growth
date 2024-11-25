@@ -1,42 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify"; // Import toastify
 import "react-toastify/dist/ReactToastify.css"; // Import gaya untuk toastify
-
-const artikel = [
-  {
-    title: "Beasiswa: Gerbang Menuju Keunggulan Akademik",
-    description:
-      "Dengan berbagai kesempatan beasiswa yang tersedia, generasi muda dapat mengejar pendidikan tinggi tanpa beban stres keuangan. Beasiswa tidak hanya mengurangi kekhawatiran finansial tetapi juga mengakui dan memberi penghargaan atas",
-    date: "20-11-2024",
-    image: "/article/1.png",
-  },
-  {
-    title: "Membuka Peluang dengan Program Pemberdayaan Pemuda",
-    description:
-      "Program pemberdayaan pemuda membuka jalan bagi generasi berikutnya untuk mengembangkan keterampilan penting, dari kepemimpinan hingga kesadaran sosial. Inisiatif ini tidak hanya memberikan sumber ",
-    date: "20-10-2024",
-    image: "/article/2.png",
-  },
-  {
-    title: "Keterlibatan Komunitas: Membangun Koneksi yang Lebih Kuat",
-    description:
-      "Terlibat dalam kegiatan komunitas tidak hanya menumbuhkan rasa memiliki tetapi juga meningkatkan kolaborasi di antara pemuda. Dengan menjadi relawan dan berpartisipasi dalam proyek lokal, generasi ",
-    date: "15-10-2024",
-    image: "/article/3.png",
-  },
-  {
-    title: "Bagaimana Magang Dapat Membentuk Jalur Karir Anda",
-    description:
-      "Magang memberikan pengalaman praktis yang sangat berharga, membantu individu muda menghubungkan pengetahuan akademik dengan aplikasi dunia nyata. Dengan mengikuti magang, pemuda dapat membangun jaringan profesional ",
-    date: "29-09-2024",
-    image: "/article/4.png",
-  },
-];
+import articles from "../docs/article";
 
 const Artikel = () => {
-  // Fungsi untuk menampilkan toast saat tombol "Baca Selengkapnya" diklik
   const alertClick = () => {
-    // Tampilkan toast info ketika tombol diklik
     toast.error("Artikel Tidak Ditemukan", {
       position: "top-center",
       autoClose: 3000,
@@ -56,13 +24,8 @@ const Artikel = () => {
   };
 
   useEffect(() => {
-    // Cek ukuran layar saat pertama kali
     checkScreenSize();
-
-    // Tambahkan event listener untuk memantau perubahan ukuran layar
     window.addEventListener("resize", checkScreenSize);
-
-    // Hapus event listener saat komponen dilepas
     return () => {
       window.removeEventListener("resize", checkScreenSize);
     };
@@ -94,7 +57,7 @@ const Artikel = () => {
           data-aos="fade-up"
           data-aos-duration="900"
         >
-          {artikel.map((art, index) => (
+          {articles.map((art, index) => (
             <div
               key={index}
               className="bg-white transition-all duration-300 transform hover:-translate-y-2 hover:translate-x-2 border-l-4 border-b-4 border-r border-t border-transparent hover:border-[#F92020] shadow-md rounded-lg overflow-hidden hover:shadow-lg flex flex-col justify-between"
@@ -111,7 +74,7 @@ const Artikel = () => {
                     {art.description}{" "}
                     <span
                       className="text-red-500 cursor-pointer"
-                      onClick={alertClick} // Call function on click
+                      onClick={alertClick}
                     >
                       Baca Selengkapnya
                     </span>
@@ -121,9 +84,8 @@ const Artikel = () => {
                   <span>{art.date}</span>
                   <div className="space-x-2 flex items-center">
                     <button className="hover:text-red-500">
-                      {/* Bookmark icon with SVG URL */}
                       <img
-                        src="/icon/bookmark.svg" // Replace with your SVG URL
+                        src="/icon/bookmark.svg"
                         alt="Bookmark"
                         className="svg-icon hover:filter hover:hue-rotate-[90deg] hover:brightness-0 hover:saturate-100"
                         width={18}
@@ -131,9 +93,8 @@ const Artikel = () => {
                       />
                     </button>
                     <button className="hover:text-red-500">
-                      {/* Heart icon with SVG URL */}
                       <img
-                        src="icon/heart.svg" // Replace with your SVG URL
+                        src="icon/heart.svg"
                         alt="Heart"
                         className="svg-icon hover:filter hover:hue-rotate-[90deg] hover:brightness-0 hover:saturate-100"
                         width={18}
